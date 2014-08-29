@@ -1,1 +1,29 @@
 /* Empty. Add your own CSS if you like */
+.slider {
+height: 220px;
+}
+
+.slide-attributes{
+background-repeat: no-repeat;
+background-position: center 0;
+height: 220px;
+background-size: 100% auto;
+}
+.slide1{
+background-image: url("../img/slide1.jpg");
+}
+.slide2{
+background-image: url("../img/slide2.jpg");
+}
+.slide3{
+background-image: url("../img/slide3.jpg");
+}
+.slide4{
+background-image: url("../img/slide4.jpg");
+}
+#login{
+  height:455px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}

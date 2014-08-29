@@ -118,6 +118,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
    loginState: 'login'
   });
 
+
+
   $httpProvider.interceptors.push('authInterceptor');
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

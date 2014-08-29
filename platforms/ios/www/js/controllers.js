@@ -1,11 +1,18 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, auth, $state) {
+.controller('AppCtrl', function($scope, auth, $state,$ionicSideMenuDelegate) {
   $scope.auth = auth;
   $scope.logout = function() {
     auth.signout();
     $state.go('login');
   }
+ $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+ $scope.toggleRight = function() {
+    $ionicSideMenuDelegate.toggleRight();
+  };
+
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -40,7 +47,11 @@ angular.module('starter.controllers', [])
     // This asks for the refresh token
     // So that the user never has to log in again
     offline_mode: true,
-    device: 'Phone'
+    device: 'Phone',
+    container: 'login',
+    icon: 'http://kmartinezmedia.com/logo-32.png',
+    chrome: true,
+    scope: 'openid profile'
   }, function() {
     // Login was successful
     $state.go('app.dash');
@@ -48,4 +59,5 @@ angular.module('starter.controllers', [])
     // Oops something went wrong during login:
     console.log("There was an error logging in", error);
   });
+  $scope.myActiveSlide = 1;
 });

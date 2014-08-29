@@ -1,6 +1,6 @@
 <ion-side-menus>
 
-  <ion-pane ion-side-menu-content>
+  <ion-pane ion-side-menu-content drag-content="false">
     <ion-nav-bar class="bar-stable nav-title-slide-ios7">
       <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
     </ion-nav-bar>
@@ -8,9 +8,35 @@
   </ion-pane>
 
   <ion-side-menu side="left">
-    <header class="bar bar-header bar-stable">
+    <header class="bar bar-header bar-energized">
       <img src="{{auth.profile.picture}}" alt="user avatar">
-      <h1 class="title">Welcome, {{auth.profile.given_name}}</h1>
+      <h1 class="title">{{auth.profile.name}}</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close ng-click="login()">
+          Dashboard
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/search">
+          Search
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+        <ion-item nav-clear menu-close ng-click="logout()">
+          Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+  <ion-side-menu side="right">
+    <header class="bar bar-header bar-positive">
+      <img src="{{auth.profile.picture}}" alt="user avatar">
+      <h1 class="title">{{auth.profile.name}}</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
