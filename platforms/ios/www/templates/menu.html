@@ -8,52 +8,74 @@
   </ion-pane>
 
   <ion-side-menu side="left">
-    <header class="bar bar-header bar-energized">
-      <img src="{{auth.profile.picture}}" alt="user avatar">
-      <h1 class="title">{{auth.profile.name}}</h1>
-    </header>
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-ios7-telephone"></button>
+  </ion-nav-buttons>
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
     <ion-content class="has-header">
+      <img class="avatar" src="{{auth.profile.picture}}"/>
+      <h3 class="center">{{auth.profile.name}}</h3>
       <ion-list>
         <ion-item nav-clear menu-close ng-click="login()">
-          Dashboard
+          Home
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/search">
-          Search
+          Read
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
+          Skils
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
+        <ion-item nav-clear menu-close href="#/app/scenarios">
+          Scenarios
         </ion-item>
-        <ion-item nav-clear menu-close ng-click="logout()">
+        <ion-item nav-clear menu-close href="#/app/game">
+          Game
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/inspiration">
+          Inspiration
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/bookmarks">
+          Bookmarks
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/notes">
+          Notes
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/friends">
+          Friends
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/profile">
+          Profile
+        </ion-item>
+        <ion-item nav-clear menu-close ng-click=logout();>
           Logout
         </ion-item>
+
       </ion-list>
     </ion-content>
   </ion-side-menu>
 
   <ion-side-menu side="right">
     <header class="bar bar-header bar-positive">
-      <img src="{{auth.profile.picture}}" alt="user avatar">
-      <h1 class="title">{{auth.profile.name}}</h1>
+<h1 class="title">Press to Connect</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close ng-click="login()">
-          Login
+        <ion-item nav-clear menu-close href="#/app/hotline1">
+          Hotline #1
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
+        <ion-item nav-clear menu-close href="#/app/hotline2">
+          Hotline #2
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
+        <ion-item nav-clear menu-close href="#/app/hotline3">
+        Hotline #3
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
+        <ion-item nav-clear menu-close href="#/app/textline1">
+        Text Line #1
         </ion-item>
-        <ion-item nav-clear menu-close ng-click="logout()">
-          Logout
+        <ion-item nav-clear menu-close>
+        Additional Numbers
         </ion-item>
       </ion-list>
     </ion-content>

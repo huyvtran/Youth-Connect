@@ -27,3 +27,34 @@ background-image: url("../img/slide4.jpg");
   margin-bottom: 20px;
   padding-left: 20px;
 }
+.avatar {
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display:block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
+}
+.center{
+  text-align: center;
+}
+.home-circle{
+  width: 100px;
+  height: 100px;
+ -webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+    margin: 0 auto;
+  text-align: center;
+  display:block;
+border: 3px solid #47A0DB;
+background-image: url("../img/resources.svg");
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 50% 50%;
+
+}

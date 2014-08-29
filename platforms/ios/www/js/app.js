@@ -60,20 +60,74 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
-    .state('app.search', {
-      url: "/search",
+    .state('app.read', {
+      url: "/read",
       views: {
         'menuContent' :{
-          templateUrl: "templates/search.html"
+          templateUrl: "templates/read.html"
         }
       }
     })
 
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.skills', {
+      url: "/skills",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/skills.html"
+        }
+      }
+    })
+
+    .state('app.scenarios', {
+      url: "/scenarios",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/scenarios.html"
+        }
+      }
+    })
+
+    .state('app.game', {
+      url: "/game",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/game.html"
+        }
+      }
+    })
+
+    .state('app.inspiration', {
+      url: "/inspiration",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/inspiration.html"
+        }
+      }
+    })
+
+    .state('app.bookmarks', {
+      url: "/bookmarks",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/bookmarks.html"
+        }
+      }
+    })
+
+    .state('app.notes', {
+      url: "/notes",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/notes.html"
+        }
+      }
+    })
+
+    .state('app.friends', {
+      url: "/friends",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/friends.html"
         }
       }
     })
