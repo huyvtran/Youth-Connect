@@ -60,6 +60,41 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
+    //Resources state
+    .state('app.resources', {
+      url: '/resources',
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/resources.html",
+          controller: 'ResourcesCtrl'
+        }
+      }
+    })
+
+    //Resources detail state
+    .state('app.resource-detail', {
+      url: '/resource/:resourceId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/resource-detail.html',
+          controller: 'ResourceDetailCtrl'
+        }
+      }
+    })
+
+
+
+    //Eguru state
+    .state('app.eguru', {
+      url: '/eguru',
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/eguru.html",
+          controller: 'EguruCtrl'
+        }
+      }
+    })
+
     .state('app.read', {
       url: "/read",
       views: {
@@ -82,7 +117,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: "/scenarios",
       views: {
         'menuContent' :{
-          templateUrl: "templates/scenarios.html"
+          templateUrl: "templates/scenarios.html",
+          controller: "ScenariosCtrl"
+        }
+      }
+    })
+
+    //Resources detail state
+    .state('app.scenario-detail', {
+      url: '/scenario/:scenarioId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/scenario-detail.html',
+          controller: 'ScenarioDetailCtrl'
         }
       }
     })

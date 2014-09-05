@@ -1,0 +1,56 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="{{resource.name}}">
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right"class="button button-icon icon ion-ios7-telephone"></button>
+  </ion-nav-buttons>
+  <ion-content has-header="true" padding="false" has-bouncing="false">
+  <div class="button-bar">
+    <a class="button button-positive" ng-click="data.filter='{{r.name}}'" ng-repeat="r in resource.sub" ng-class="{'active' : activeButtonBar == $index}">{{r.name}}</a>
+<!--     <a class="button button-positive" ng-click="data.filter='housing'">Housing</a>
+<a class="button button-clear" ng-click="data.filter='living'">Daily Living</a>
+<a class="button button-clear" ng-click="data.filter='community'">Community Participation</a> -->
+  </div>
+  <ion-slide-box class="slider">
+    <ion-slide>
+      <div class="slide1 slide-attributes"></div>
+    </ion-slide>
+    <ion-slide>
+      <div class="slide2 slide-attributes"></div>
+    </ion-slide>
+    <ion-slide>
+      <div class="slide3 slide-attributes"></div>
+    </ion-slide>
+    <ion-slide>
+      <div class="slide4 slide-attributes"></div>
+    </ion-slide>
+  </ion-slide-box>
+<div class="list card">
+
+  <div class="item item-avatar">
+    <img src="{{auth.profile.picture}}">
+    <h2>{{r.name}}</h2>
+    <p>{{r.address}}</p>
+    <button class="button button-small button-balanced">
+      {{r.phone}}
+    </button>
+    <div class=" item-text-wrap padding-top">
+Plura mihi bona sunt, inclinet, amari petere vellent. Nec dubitamus multa iter quae et nos invenerat. Morbi fringilla convallis sapien, id pulvinar odio volutpat.
+  </div>
+  </div>
+
+    <div class="item item-icon-left"><i class="icon button-small ion-clock"></i>Hours</div>
+    <div class="item item-icon-left"><i class="icon button-small ion-map"></i>Directions</div>
+    <div class="item item-icon-left"><i class="icon button-small ion-ios7-telephone"></i>Phone Number</div>
+</div>
+  </ion-content>
+  <div class="bar bar-footer bar-stable">
+    <div class="title">Alphabetical List of All</div>
+    <i class="button button-clear ion-ios7-arrow-right"></i>
+  </div>
+
+</ion-view>

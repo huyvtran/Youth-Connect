@@ -1,4 +1,4 @@
-<ion-view title="Dashboard" hide-back-button="true" has>
+<ion-view title="Dashboard" hide-back-button="true" >
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -12,12 +12,24 @@
 </div>
 <ion-content class="has-header">
 <div class="row" padding="true">
-  <div class="col"><div class="home-circle"></div><p class="center">Resources</p></div>
-  <div class="col"><div class="home-circle"></div><p class="center">Profile</p></div>
+  <div class="col">
+    <div class="card padding" ng-click="goToResources()">
+      <div class="home-circle"></div><p class="center">Resources</p></div>
+    </div>
+  <div class="col">
+    <div class="card padding" ng-click="goToProfile()">
+      <div class="home-circle"></div><p class="center">Profile</p></div>
+    </div>
 </div>
 <div class="row">
-  <div class="col"><div class="home-circle"></div><p class="center">eGuru</p></div>
-  <div class="col"><div class="home-circle"></div><p class="center">Add Resource</p></div>
+  <div class="col">
+    <div class="card padding" ng-click="goToEguru()">
+      <div class="home-circle"></div><p class="center">eGuru</p></div>
+    </div>
+  <div class="col">
+    <div class="card padding" ng-click="goToResources()">
+      <div class="home-circle"></div><p class="center">Add Resource</p></div>
+    </div>
 </div>
   </ion-content>
 </ion-view>

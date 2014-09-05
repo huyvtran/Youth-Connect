@@ -32,13 +32,49 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, auth, $state) {
   $scope.auth = auth;
+  $scope.goToResources = function() {
+    $state.go('app.resources');
+  };
+  $scope.goToProfile = function() {
+    $state.go('app.profile');
+  };
+  $scope.goToEguru = function() {
+    $state.go('app.eguru');
+  };
+  $scope.goToAddResource = function() {
+    $state.go('app.resources');
+  };
 
 })
 
 .controller('ProfileCtrl', function($scope, auth, $state) {
 })
 
-.controller('LoginCtrl', function($scope, auth, $state) {
+.controller('EguruCtrl', function($scope, auth, $state) {
+})
+
+.controller('ScenariosCtrl', function($scope, auth, $state, Scenarios) {
+  $scope.scenarios = Scenarios.all();
+  var s = $scope.scenarios;
+  console.log(s);
+})
+.controller('ScenarioDetailCtrl', function($scope, $stateParams, Scenarios) {
+  $scope.scenario = Scenarios.get($stateParams.scenarioId);
+})
+
+
+.controller('ResourcesCtrl', function($scope, auth, $state, Resources) {
+$scope.resources = Resources.all();
+var r = $scope.resources;
+console.log(r);
+})
+
+.controller('ResourceDetailCtrl', function($scope, $stateParams, Resources) {
+  $scope.resource = Resources.get($stateParams.resourceId);
+  $scope.activeButtonBar = 0;
+})
+
+.controller('LoginCtrl', function($scope, auth, $state, $ionicSlideBoxDelegate) {
   auth.signin({
     // This is a must for mobile projects
     popup: true,
@@ -59,5 +95,24 @@ angular.module('starter.controllers', [])
     // Oops something went wrong during login:
     console.log("There was an error logging in", error);
   });
-  $scope.myActiveSlide = 1;
-});
+  $scope.myActiveSlide = 0;
+})
+
+.directive('tabState', function($state) {
+
+    return {
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        scope.$watch(function() {
+          return $state.current.name;
+        }, function(stateName) {
+           if(stateName === attrs.uiSref) {
+             element.addClass('active')
+           }
+          else {
+            element.removeClass('active')
+          }
+        });
+      }
+    };
+  });
