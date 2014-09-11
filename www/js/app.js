@@ -82,6 +82,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
+    //Resources detail state
+    .state('app.resource-category', {
+      url: '/resource/:resourceId/:categoryId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/category.html',
+          controller: 'CategoryCtrl'
+        }
+      }
+    })
 
 
     //Eguru state

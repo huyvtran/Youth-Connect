@@ -1,34 +1,26 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view title="{{resource.name}}">
+
+<ion-view title="{{resource.name}}" hide-back-button="false">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
   <ion-nav-buttons side="right">
     <button menu-toggle="right"class="button button-icon icon ion-ios7-telephone"></button>
   </ion-nav-buttons>
-  <ion-content has-header="true" padding="false" has-bouncing="false">
-  <div class="button-bar">
-    <a class="button button-positive" ng-click="data.filter='{{r.name}}'" ng-repeat="r in resource.sub" ng-class="{'active' : activeButtonBar == $index}">{{r.name}}</a>
-<!--     <a class="button button-positive" ng-click="data.filter='housing'">Housing</a>
-<a class="button button-clear" ng-click="data.filter='living'">Daily Living</a>
-<a class="button button-clear" ng-click="data.filter='community'">Community Participation</a> -->
-  </div>
-  <ion-slide-box class="slider">
-    <ion-slide>
-      <div class="slide1 slide-attributes"></div>
-    </ion-slide>
-    <ion-slide>
-      <div class="slide2 slide-attributes"></div>
-    </ion-slide>
-    <ion-slide>
-      <div class="slide3 slide-attributes"></div>
-    </ion-slide>
-    <ion-slide>
-      <div class="slide4 slide-attributes"></div>
-    </ion-slide>
-  </ion-slide-box>
+          <ion-content has-header="true" has-subheader="true" padding="false" >
+            <div class="button-bar">
+                      <a class="button" ng-repeat="r in resources" ng-if= "resource.id === r.domainId && r.subdomainItem === 'TRUE'" ng-click="filterCategory(r, $index)" ng-class="{active:currentSub===r.subdomainId}">{{r.name}}</a>
+                        </div>
+                      </div>
+<!--   <ion-slide-box class="slider">
+  <ion-slide>
+    <div class="slide1 slide-attributes"></div>
+  </ion-slide>
+</ion-slide-box> -->
+  <ion-list>
+    <ion-item ng-repeat="c in resources" ng-if="currentSub === c.subdomainId && c.categoryItem === 'TRUE' " ng-click="goToCategory(c)" href="#/app/resource/{{resource.id}}/{{c.id}}">
+      {{c.name}}
+      </ion-item>
+    </ion-list>
 <div class="list card">
 
   <div class="item item-avatar">

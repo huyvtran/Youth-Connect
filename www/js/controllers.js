@@ -56,7 +56,6 @@ angular.module('starter.controllers', [])
 .controller('ScenariosCtrl', function($scope, auth, $state, Scenarios) {
   $scope.scenarios = Scenarios.all();
   var s = $scope.scenarios;
-  console.log(s);
 })
 .controller('ScenarioDetailCtrl', function($scope, $stateParams, Scenarios) {
   $scope.scenario = Scenarios.get($stateParams.scenarioId);
@@ -66,12 +65,27 @@ angular.module('starter.controllers', [])
 .controller('ResourcesCtrl', function($scope, auth, $state, Resources) {
 $scope.resources = Resources.all();
 var r = $scope.resources;
-console.log(r);
 })
 
 .controller('ResourceDetailCtrl', function($scope, $stateParams, Resources) {
-  $scope.resource = Resources.get($stateParams.resourceId);
-  $scope.activeButtonBar = 0;
+  $scope.resource = Resources.get($stateParams.resourceId-1);
+  $scope.resources = Resources.all();
+  $scope.clickedSub= {}
+  $scope.filterCategory = function(selected){
+    $scope.clickedSub.selected= selected;
+    $scope.currentSub = selected.subdomainId;
+    
+  }
+  $scope.clickedCategory= {};
+  $scope.goToCategory = function(selected){
+    $scope.clickedCategory.selected= selected;
+    $scope.currentCategory = selected.name;
+  }
+})
+
+.controller('CategoryCtrl', function($scope, $stateParams,Resources) {
+console.log($stateParams);
+$scope.category = Resources.get($stateParams.categoryId-1);
 })
 
 .controller('LoginCtrl', function($scope, auth, $state, $ionicSlideBoxDelegate) {
@@ -97,22 +111,3 @@ console.log(r);
   });
   $scope.myActiveSlide = 0;
 })
-
-.directive('tabState', function($state) {
-
-    return {
-      restrict: 'A',
-      link: function (scope, element, attrs) {
-        scope.$watch(function() {
-          return $state.current.name;
-        }, function(stateName) {
-           if(stateName === attrs.uiSref) {
-             element.addClass('active')
-           }
-          else {
-            element.removeClass('active')
-          }
-        });
-      }
-    };
-  });
