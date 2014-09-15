@@ -1,5 +1,5 @@
 
-<ion-view title="{{resource.name}}" hide-back-button="false">
+<ion-view title="{{resource.name}}" hide-back-button="false" >
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -8,19 +8,15 @@
   </ion-nav-buttons>
           <ion-content has-header="true" has-subheader="true" padding="false" >
             <div class="button-bar">
-                      <a class="button" ng-repeat="r in resources" ng-if= "resource.id === r.domainId && r.subdomainItem === 'TRUE'" ng-click="filterCategory(r, $index)" ng-class="{active:currentSub===r.subdomainId}">{{r.name}}</a>
-                        </div>
-                      </div>
-<!--   <ion-slide-box class="slider">
-  <ion-slide>
-    <div class="slide1 slide-attributes"></div>
+              <a class="button" ng-repeat="subdomain in subdomains"ng-if="subdomain.resource_id === resource.id " ng-click="filterCategory(subdomain, $index)" ng-class="{active:currentSub===subdomain.id}">{{subdomain.name}}</a>
+            </div>
+
+<ion-slide-box class="slider">
+  <ion-slide  ng-repeat="category in categories" ng-if="category.resource_id === resource.id && category.subdomain_id === currentSub"  ng-click="goToCategory(selected)" href="#/app/resource/{{resource.id}}/{{category.id}}" ng-init="init()" >
+    <div class="slide-attributes"><span>{{category.name}}</span><img src="../img/{{category.image}}.png" alt=""></div>
   </ion-slide>
-</ion-slide-box> -->
-  <ion-list>
-    <ion-item ng-repeat="c in resources" ng-if="currentSub === c.subdomainId && c.categoryItem === 'TRUE' " ng-click="goToCategory(c)" href="#/app/resource/{{resource.id}}/{{c.id}}">
-      {{c.name}}
-      </ion-item>
-    </ion-list>
+</ion-slide-box>
+
 <div class="list card">
 
   <div class="item item-avatar">

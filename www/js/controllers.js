@@ -64,24 +64,35 @@ angular.module('starter.controllers', [])
 
 .controller('ResourcesCtrl', function($scope, auth, $state, Resources) {
 $scope.resources = Resources.all();
-var r = $scope.resources;
+
+$scope.clickedResource = {};
+$scope.selectResource = function(selected){
+  $scope.clickedResource.selected= selected;
+}
+
 })
 
-.controller('ResourceDetailCtrl', function($scope, $stateParams, Resources) {
-  $scope.resource = Resources.get($stateParams.resourceId-1);
-  $scope.resources = Resources.all();
+.controller('ResourceDetailCtrl', function($scope, $stateParams, Resources, Subdomains, Categories) {
+
+  $scope.resource = Resources.get($stateParams.resourceId);
+  $scope.categories = Categories.all();
+  $scope.subdomains = Subdomains.all();
+  // $scope.resource = Resources.get($stateParams.resourceId-1);
+  // $scope.resources = Resources.all();
   $scope.clickedSub= {}
   $scope.filterCategory = function(selected){
     $scope.clickedSub.selected= selected;
-    $scope.currentSub = selected.subdomainId;
-    
+    $scope.currentSub = selected.id;
+    $scope.currentSubCategory = selected.category;
   }
   $scope.clickedCategory= {};
-  $scope.goToCategory = function(selected){
-    $scope.clickedCategory.selected= selected;
-    $scope.currentCategory = selected.name;
-  }
+  // $scope.goToCategory = function(selected){
+  //   $scope.clickedCategory.selected= selected;
+  //   $scope.currentCategory = selected.name;
+  // }
 })
+
+
 
 .controller('CategoryCtrl', function($scope, $stateParams,Resources) {
 console.log($stateParams);
