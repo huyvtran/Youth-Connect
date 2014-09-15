@@ -24,29 +24,247 @@ angular.module('starter.services', [])
 })
 
 
+// .factory('Resources', function() {
+//   // Might use a resource here that returns a JSON array
+//
+//   // Some fake testing data
+//   var resources = [
+// { id: 0, name: 'Housing', desc: 'Whats your living situation?' },
+// { id: 1, name: 'Personal Effectiveness', desc:'How do you relate to yourself and others?'},
+// { id: 2, name: 'Health & Safety', desc: 'Emotional, Physical Health & Wellbeing' },
+// { id: 3, name: 'Educational Opportunities', desc: 'When do you have enough education?' },
+// { id: 4, name: 'Employment & Career', desc: 'Do you want a job or a career?' },
+// { id: 5, name: 'Community-Life Functioning', desc: 'How do citizens take care of themselves?' },
+// { id: 6, name: 'Leisure Activities', desc: 'Do you want to party? or maybe volunteer?' }
+// ];
+//
+//   return {
+//     all: function() {
+//       return resources;
+//     },
+//     get: function(resourceId) {
+//       // Simple index lookup
+//       return resources[resourceId];
+//     }
+//   }
+//
+// })
+
 .factory('Resources', function() {
-  // Might use a resource here that returns a JSON array
+// Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var resources = [
-{ id: 0, name: 'Housing', desc: 'Whats your living situation?' },
-{ id: 1, name: 'Personal Effectiveness', desc:'How do you relate to yourself and others?'},
-{ id: 2, name: 'Health & Safety', desc: 'Emotional, Physical Health & Wellbeing' },
-{ id: 3, name: 'Educational Opportunities', desc: 'When do you have enough education?' },
-{ id: 4, name: 'Employment & Career', desc: 'Do you want a job or a career?' },
-{ id: 5, name: 'Community-Life Functioning', desc: 'How do citizens take care of themselves?' },
-{ id: 6, name: 'Leisure Activities', desc: 'Do you want to party? or maybe volunteer?' }
-];
+// Some fake testing data
+var resources=
+    [{id:0,
+      name:"Housing",
+      state: "homeless",
+      desc:"What's your living situation?",
+      subdomain: [
+{
+"id":1,
+"name":"Homeless",
+"description":"",
+"image":1,
+"category" : ["Couch Surfing","Living on the Streets"]
+},
+{
+"id":2,
+"name":"Runaway",
+"description":"",
+"image":2
+},
+{
+"id":3,
+"name":"Other Situations",
+"description":"",
+"image":3,
+"category" : ["Couch Surfing","Living on the Streets","Independent residence","Residing with natural, adoptive, or foster family","Other family situations (e.g., girlfriend’s family, extended family)", "Semi-independent living (e.g., service coordinator assists but does not live on site)","Supported living (e.g., supervised apartment with a live in mentor or on site support staff at apartment complex)","Group home or boarding home","Restrictive setting (e.g., crisis unit, residential treatment center, detention center)"]
+}
+]
+},
+{id:1,
+name:"Personal Effectiveness",
+ state: "personal_effectiveness/interpersonal",
+      desc:"How do you relate to yourself and others?",
+      subdomain: [
+{
+"id":0,
+"name":"Interpersonal Relationships",
+"description":"",
+"image":"",
+"category" : ["Relationship development and maintenance of friendships,Balance of independence and interdependence with family members","Dating skills and development/maintenance of intimate relationships","Maintenance of relationships with mentors and informal key players"]
+},
+{
+"id":1,
+"name":"Self-Determination",
+"description":"",
+"image":"",
+"category": ["Social problem solving (e.g., generate alternative options, make informed decisions)","Set goals and develop plans for achieving goals","Evaluate one’s progress in achieving goals","Accept one’s strengths and limitations","Advocate for one’s rights and positions","Develop one’s creativity","Right to fail"]
+},
+{
+"id":2,
+"name":"Communication",
+"description":"",
+"image":"",
+"category":["Express one’s ideas and feelings through speaking and listening","Reading and writing skills for learning, fun and communication","Knowledge of information sources (e.g., use of library, authorities, internet communications, and other resources)","Study and learning skills for gaining and applying new information","Cyberspace safety (e.g., revealing personal information, meeting contacts in person, use of credit cards online)"]
+},
+{
+"id":3,
+"name":"Parenting",
+"description":"",
+"image":"",
+"category": ["Health of mother for the prenatal fetus (e.g., balanced diet, physical activity, adequate sleep, no smoking)","Recognizing when to see a physician for prenatal and postnatal care","Young adult male supports girlfriend/spouse in promoting the health of the mother and baby","Young adult male and female assuming responsibility for rearing the children (e.g., care and discipline, behavioral parenting practices, providing home setting, finances)"]
+}
+]
+},
+{
+  id:2,
+name:"Health & Safety",
+  state: "health_safety",
+      desc:"Emotional, Physical Health & Wellbeing",
+      subdomain: [
+{
+"id":"0",
+"name":"Emotional & Behavioral Wellbeing",
+"description":"",
+"image":"",
+"category" :["Create reciprocal relationships with others","Expression of care and concern for others","Social skills (e.g., positive feedback to others, acceptance of negative feedback, self-monitoring, self-evaluation)","Assertiveness skills and conflict resolution skills","Coping with stress and the ability to relax","Management of anger and moods","Spiritual wellbeing","Self-management of psychotropic medications and side effects","Manage use of alcohol and drugs","Avoid physical confrontations and criminal activities","Avoid danger to self and others"]
+},
+{
+"id":"1",
+"name":"Physical Health & Wellbeing",
+"description":"",
+"image":"",
+"category" :["Healthcare and fitness (e.g., balanced diet, physical activity)","Self-management of over-the-counter and prescription medications and possible side effects","Knowledge of sexual functioning and birth control (e.g., prevention of sexually transmitted diseases and unwanted pregnancies)","Ability to access medical and dental services"]
+}
+]
+},
 
-  return {
-    all: function() {
-      return resources;
-    },
-    get: function(resourceId) {
-      // Simple index lookup
-      return resources[resourceId];
-    }
-  }
+{
+  id:3,
+name:"Educational Opportunities",
+  state: "educational_opporunities",
+      desc:"When do you have enough education?",
+      subdomain: [
+{
+"id":0,
+"name":"Degrees",
+"description":"",
+"image":"",
+"cateogry": ["Bachelor’s degree or beyond","Associate’s degree"]
+},
+{
+"id":1,
+"name":"Certifications",
+"description":"",
+"image":"",
+"category": ["Vocational or technical certification","High school completion or GED certification"]
+},
+{
+"id":2,
+"name":"Other",
+"description":"",
+"image":""
+}
+]
+},
+
+{
+  id:4,
+name:"Employment & Career",
+  state: "employment",
+      desc:"Do you want a job or a career?",
+      subdomain: [
+{
+"id":0,
+"name":"Competative",
+"description":"",
+"image":"",
+"category" : "Work experience, paid or unpaid, at competitive or entrepreneurial worksite (e.g., apprenticeship with employee serving as coworker mentor)"
+},
+{
+"id":1,
+"name":"Supported",
+"description":"",
+"image":""
+},
+{
+"id":2,
+"name":"Transitional",
+"description":"",
+"image":""
+}
+]
+},
+
+{
+  id:5,
+name:"Community-Life Functioning",
+  state: "community",
+      desc:"How do citizen's take care of themselves?",
+      subdomain: [
+{
+"id":0,
+"name":"Daily Living",
+"description":"",
+"image":"",
+"category" : ["Self-care","Maintenance of living space and personal possessions","Money management","Cooking and nutrition","Maintenance and security of personal and financial documents"]
+},
+{
+"id":1,
+"name":"Community Participation",
+"description":"",
+"image":"",
+"category": ["Safety skills (e.g., avoid dangerous situations, prevent victimization","Mobility around the community","Access and use of relevant community agencies and resources","Citizenship responsibilities, knowledge of basic rights and responsibilities","Community social support (e.g., peer groups, community organizations)","Access to legal services","Cultural and spiritual resources"]
+}
+]
+},
+
+{
+  id:6,
+name:"Leisure Activities",
+  state: "leisure",
+      desc:"Do you want to party? or maybe volunteer?",
+      subdomain: [
+{
+"id":0,
+"name":"Hobbies",
+"description":"",
+"image":"",
+"category": "Entertaining one’s self"
+},
+{
+"id":1,
+"name":"Volunteering",
+"description":"",
+"image":""
+},
+{
+"id":2,
+"name":"Places",
+"description":"",
+"image":"",
+"category" : ["Activities with others", "Creating indoor and outdoor activities of interest and fun"]
+},
+{
+"id":3,
+"name":"Healthy",
+"description":"",
+"image":""
+}
+]
+}
+]
+
+return {
+all: function() {
+return resources;
+},
+get: function(resourceId) {
+// Simple index lookup
+return resources[resourceId];
+}
+}
 
 })
 

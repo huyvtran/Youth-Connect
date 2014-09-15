@@ -35,188 +35,131 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: "LoginCtrl"
     })
 
-    // setup an abstract state for the tabs directive
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl',
-      data: {
-        // This tells Auth0 that this state requires the user to be logged in.
-        // If the user isn't logged in and he tries to access this state
-        // he'll be redirected to the login page
-        requiresLogin: true
-      }
-    })
+    // // setup an abstract state for the tabs directive
+    // .state('app', {
+    //   url: "/app",
+    //   abstract: true,
+    //   templateUrl: "templates/menu.html",
+    //   controller: 'AppCtrl',
+    //   data: {
+    //     // This tells Auth0 that this state requires the user to be logged in.
+    //     // If the user isn't logged in and he tries to access this state
+    //     // he'll be redirected to the login page
+    //     requiresLogin: true
+    //   }
+    // })
 
     // Your app states
-    .state('app.dash', {
+    .state('dash', {
       url: '/dashboard',
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/dashboard.html",
-          controller: 'DashCtrl'
-        }
-      }
+templateUrl: "templates/dashboard.html",
+controller: 'DashCtrl'
     })
 
     //Resources state
-    .state('app.resources', {
+    .state('resources', {
       url: '/resources',
+templateUrl: "templates/resources.html",
+controller: 'ResourcesCtrl'
+    })
+
+      .state('housing-tab', {
+      url: "/housing",
+      abstract: true,
+      templateUrl: "templates/housing-tabs.html"
+    })
+
+    .state('housing-tab.homeless', {
+      url: "/homeless",
       views: {
-        'menuContent' :{
-          templateUrl: "templates/resources.html",
-          controller: 'ResourcesCtrl'
+        'homeless-tab': {
+          templateUrl: "templates/housing-homeless.html",
+          controller: 'HousingCtrl'
         }
       }
     })
 
-    //Resources detail state
-    .state('app.resource-detail', {
-      url: '/resource/:resourceId',
+    .state('housing-tab.runaway', {
+      url: "/runaway",
       views: {
-        'menuContent': {
-          templateUrl: 'templates/resource-detail.html',
-          controller: 'ResourceDetailCtrl'
+        'runaway-tab': {
+          templateUrl: "templates/housing-runaway.html",
+          controller: 'HousingCtrl'
         }
       }
     })
 
-    //Resources detail state
-    .state('app.resource-category', {
-      url: '/resource/:resourceId/:categoryId',
+    .state('housing-tab.other', {
+      url: "/other",
       views: {
-        'menuContent': {
-          templateUrl: 'templates/category.html',
-          controller: 'CategoryCtrl'
+        'other-tab': {
+          templateUrl: "templates/housing-other.html",
+          controller: 'HousingCtrl'
         }
       }
     })
+
 
 
     //Eguru state
-    .state('app.eguru', {
+    .state('eguru', {
       url: '/eguru',
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/eguru.html",
-          controller: 'EguruCtrl'
-        }
-      }
+templateUrl: "templates/eguru.html",
+controller: 'EguruCtrl'
     })
 
-    .state('app.read', {
+    .state('read', {
       url: "/read",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/read.html"
-        }
-      }
+templateUrl: "templates/read.html"
     })
 
-    .state('app.skills', {
+    .state('skills', {
       url: "/skills",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/skills.html"
-        }
-      }
+templateUrl: "templates/skills.html"
     })
 
-    .state('app.scenarios', {
+    .state('scenarios', {
       url: "/scenarios",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/scenarios.html",
-          controller: "ScenariosCtrl"
-        }
-      }
+templateUrl: "templates/scenarios.html",
+controller: "ScenariosCtrl"
     })
 
     //Resources detail state
-    .state('app.scenario-detail', {
+    .state('scenario-detail', {
       url: '/scenario/:scenarioId',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/scenario-detail.html',
-          controller: 'ScenarioDetailCtrl'
-        }
-      }
+templateUrl: 'templates/scenario-detail.html',
+controller: 'ScenarioDetailCtrl'
     })
 
-    .state('app.game', {
+    .state('game', {
       url: "/game",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/game.html"
-        }
-      }
+templateUrl: "templates/game.html"
     })
 
-    .state('app.inspiration', {
+    .state('inspiration', {
       url: "/inspiration",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/inspiration.html"
-        }
-      }
+templateUrl: "templates/inspiration.html"
     })
 
-    .state('app.bookmarks', {
+    .state('bookmarks', {
       url: "/bookmarks",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/bookmarks.html"
-        }
-      }
+templateUrl: "templates/bookmarks.html"
     })
 
-    .state('app.notes', {
+    .state('notes', {
       url: "/notes",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/notes.html"
-        }
-      }
+templateUrl: "templates/notes.html"
     })
 
-    .state('app.friends', {
+    .state('friends', {
       url: "/friends",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/friends.html"
-        }
-      }
+templateUrl: "templates/friends.html"
     })
 
-    .state('app.profile', {
+    .state('profile', {
       url: "/profile",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/profile.html",
-          controller: 'ProfileCtrl'
-        }
-      }
-    })
-
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-    .state('app.single', {
-      url: "/playlists/:playlistId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
-        }
-      }
+templateUrl: "templates/profile.html",
+controller: 'ProfileCtrl'
     });
 
   // Configure Auth0
@@ -233,7 +176,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   $httpProvider.interceptors.push('authInterceptor');
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/dashboard');
 
 })
 

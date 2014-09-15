@@ -1,17 +1,17 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, auth, $state,$ionicSideMenuDelegate) {
+.controller('NavCtrl', function($scope, auth, $state,$ionicSideMenuDelegate) {
   $scope.auth = auth;
   $scope.logout = function() {
     auth.signout();
     $state.go('login');
   }
- $scope.toggleLeft = function() {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
- $scope.toggleRight = function() {
-    $ionicSideMenuDelegate.toggleRight();
-  };
+  $scope.showMenu = function () {
+     $ionicSideMenuDelegate.toggleLeft();
+   };
+   $scope.showRightMenu = function () {
+     $ionicSideMenuDelegate.toggleRight();
+   };
 
 })
 
@@ -33,16 +33,16 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, auth, $state) {
   $scope.auth = auth;
   $scope.goToResources = function() {
-    $state.go('app.resources');
+    $state.go('resources');
   };
   $scope.goToProfile = function() {
-    $state.go('app.profile');
+    $state.go('profile');
   };
   $scope.goToEguru = function() {
-    $state.go('app.eguru');
+    $state.go('eguru');
   };
   $scope.goToAddResource = function() {
-    $state.go('app.resources');
+    $state.go('resources');
   };
 
 })
@@ -61,42 +61,31 @@ angular.module('starter.controllers', [])
   $scope.scenario = Scenarios.get($stateParams.scenarioId);
 })
 
-
-.controller('ResourcesCtrl', function($scope, auth, $state, Resources) {
-$scope.resources = Resources.all();
-
-$scope.clickedResource = {};
-$scope.selectResource = function(selected){
-  $scope.clickedResource.selected= selected;
-}
-
+.controller('ResourcesCtrl', function($scope, $state, Resources,$location) {
+  $scope.goToSubdomain = function() {
+    $state.go('housing-tab.homeless');
+  };
+  $scope.resources = Resources.all();
 })
 
-.controller('ResourceDetailCtrl', function($scope, $stateParams, Resources, Subdomains, Categories) {
+.controller('HousingCtrl', function($scope) {
+    $scope.homeless = [
+    { title: 'Couch Surfing', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.', image: '1' },
+    { title: 'Living on the Streets', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '2' }
+  ];
+      $scope.runaway = [
+    { title: 'Coming Soon', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.', image: '1' }
+  ];
+      $scope.other = [
+        { title: 'Independent residence', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.', image: '1' },
+        { title: 'Residing with natural, adoptive, or foster family', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '2' },
+        { title: 'Other family situations (e.g., girlfriend’s family, extended family)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '3' },
+        { title: 'Semi-independent living (e.g., service coordinator assists but does not live on site)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '4' },
+        { title: 'Supported living (e.g., supervised apartment with a live in mentor or on site support staff at apartment complex)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '5' },
+        { title: 'Group home or boarding home', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '1' },
+        { title: 'Restrictive setting (e.g., crisis unit, residential treatment center, detention center)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '2' }
+  ];
 
-  $scope.resource = Resources.get($stateParams.resourceId);
-  $scope.categories = Categories.all();
-  $scope.subdomains = Subdomains.all();
-  // $scope.resource = Resources.get($stateParams.resourceId-1);
-  // $scope.resources = Resources.all();
-  $scope.clickedSub= {}
-  $scope.filterCategory = function(selected){
-    $scope.clickedSub.selected= selected;
-    $scope.currentSub = selected.id;
-    $scope.currentSubCategory = selected.category;
-  }
-  $scope.clickedCategory= {};
-  // $scope.goToCategory = function(selected){
-  //   $scope.clickedCategory.selected= selected;
-  //   $scope.currentCategory = selected.name;
-  // }
-})
-
-
-
-.controller('CategoryCtrl', function($scope, $stateParams,Resources) {
-console.log($stateParams);
-$scope.category = Resources.get($stateParams.categoryId-1);
 })
 
 .controller('LoginCtrl', function($scope, auth, $state, $ionicSlideBoxDelegate) {
@@ -115,7 +104,7 @@ $scope.category = Resources.get($stateParams.categoryId-1);
     scope: 'openid profile'
   }, function() {
     // Login was successful
-    $state.go('app.dash');
+    $state.go('dash');
   }, function(error) {
     // Oops something went wrong during login:
     console.log("There was an error logging in", error);

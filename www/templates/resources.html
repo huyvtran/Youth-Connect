@@ -1,16 +1,15 @@
-<ion-view title="Resources" hide-back-button="true">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-nav-buttons side="right">
-    <button menu-toggle="right"class="button button-icon icon ion-ios7-telephone"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-    <div class="list list-inset">
-    <a class="item" ng-repeat="resource in resources" href="#/app/resource/{{$index}}" ng-click="selectResource(resource.id)">
-      {{resource.name}}
-      <p>{{resource.desc}}</p>
-    </a>
+<ion-view title="Resources" hide-back-button="false">
+<div class="bar bar-header">
+<button class="button button-icon icon ion-navicon"></button>
+<h1 class="title">Resources</h1>
+<button class="button button-icon icon ion-ios7-pulse-strong"></button>
 </div>
-  </ion-content>
+        <ion-content class="has-header">
+          <div class="list list-inset">
+            <a class="item" ng-repeat="resource in resources" ng-click="goToSubdomain()">
+              {{resource.name}}
+              <p>{{resource.desc}}</p>
+            </a>
+          </div>
+        </ion-content>
 </ion-view>
