@@ -1,4 +1,12 @@
 {
   "name": "youthConnect",
-  "app_id": "d4682a8f"
+  "app_id": "d4682a8f",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

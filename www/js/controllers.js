@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('NavCtrl', function($scope, auth, $state,$ionicSideMenuDelegate) {
+.controller('NavCtrl', function($scope, auth, $state,$ionicSideMenuDelegate, $ionicSlideBoxDelegate) {
   $scope.auth = auth;
   $scope.logout = function() {
     auth.signout();
@@ -12,7 +12,12 @@ angular.module('starter.controllers', [])
    $scope.showRightMenu = function () {
      $ionicSideMenuDelegate.toggleRight();
    };
-
+$scope.nextSlide = function() {
+    $ionicSlideBoxDelegate.next();
+  };
+  $scope.previousSlide = function() {
+    $ionicSlideBoxDelegate.previous();
+  }
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -68,7 +73,16 @@ angular.module('starter.controllers', [])
   $scope.resources = Resources.all();
 })
 
-.controller('HousingCtrl', function($scope) {
+.controller('HousingCtrl', function($scope, $ionicSlideBoxDelegate) {
+
+    $scope.currentSlide = 0;
+
+    $scope.slideChanged = function(currSlide) {
+        $scope.currentSlide = currSlide;
+        $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
+        console.log('Active Slide=' + $scope.currentSlide);
+        console.log('Total Slides=' + $scope.totalSlides);
+    }
     $scope.homeless = [
     { title: 'Couch Surfing', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.', image: '1' },
     { title: 'Living on the Streets', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '2' }

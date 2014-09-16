@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-    <link href="css/style.css" rel="stylesheet">
     <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -47,40 +47,40 @@
   <ion-nav-view animation="slide-left-right"></ion-nav-view>
   </ion-side-menu-content>
   <ion-side-menu side="left">
-  <ion-header-bar class="bar bar-header bar-assertive">
-  <h1 class="title">Left Menu</h1>
+  <ion-header-bar class="bar bar-header bar-light transparent">
+  <h1 class="title">Welcome, {{auth.profile.name}}</h1>
   </ion-header-bar>
-  <ion-content has-header="true">
+  <ion-content has-header="true" class="sidemenu_bg">
 <ion-list>
   <ion-item nav-clear menu-close href="#/dashboard">
-    Home
+    <span><img src="img/menu1.png"></span>Home
   </ion-item>
   <ion-item nav-clear menu-close href="#/read">
-    Read
+  <span><img src="img/menu2.png"></span>  Read
   </ion-item>
   <ion-item nav-clear menu-close href="#/skills">
-    Skils
+    <span><img src="img/menu3.png"></span>Skils
   </ion-item>
   <ion-item nav-clear menu-close href="#/scenarios">
-    Scenarios
+  <span><img src="img/menu4.png"></span>  Scenarios
   </ion-item>
   <ion-item nav-clear menu-close href="#/game">
-    Game
+    <span><img src="img/menu5.png"></span>Game
   </ion-item>
   <ion-item nav-clear menu-close href="#/inspiration">
-    Inspiration
+    <span><img src="img/menu6.png"></span>Inspiration
   </ion-item>
   <ion-item nav-clear menu-close href="#/bookmarks">
-    Bookmarks
+    <span><img src="img/menu7.png"></span>Bookmarks
   </ion-item>
   <ion-item nav-clear menu-close href="#/notes">
-    Notes
+  <span><img src="img/menu8.png"></span>  Notes
   </ion-item>
   <ion-item nav-clear menu-close href="#/friends">
-    Friends
+    <span><img src="img/menu9.png"></span>Friends
   </ion-item>
   <ion-item nav-clear menu-close href="#/profile">
-    Profile
+    <span><img src="img/menu10.png"></span>Profile
   </ion-item>
   <ion-item nav-clear menu-close ng-click=logout();>
     Logout
