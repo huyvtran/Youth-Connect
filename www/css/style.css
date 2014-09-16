@@ -22,8 +22,40 @@
   font-weight:  700;
 }
 
+.resources .item  {
+  background-color:#4376a7;
+  border-radius: 6px;
+  margin:20px;
+  color:white;
+  text-align:center;
+}
+.resources p {
+  color:white;
+  font-family: 'Open Sans';
+}
+.resources a{
+  font-family: 'Open Sans Semibold';
+}
 
+.resources .list{
+  padding-left: 20px;
+padding-right: 20px;
+padding-top:10px;
+}
 
+.hotline .item-complex .item-content, .item-radio .item-content .item {
+  background-color:#fd5256;
+  border-radius: 6px;
+  margin-bottom:20px;
+  color:white;
+  text-align:center;
+  font-family: 'Open Sans';
+}
+.hotline .list{
+  padding-left: 20px;
+padding-right: 20px;
+padding-top:20px;
+}
 
 
 .slider {
@@ -133,7 +165,7 @@ box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
 
 .slider button{
   position:absolute;
-  top:50%;
+  top:40%;
 }
 
 .slider button.right{

@@ -156,6 +156,11 @@ templateUrl: "templates/notes.html"
 templateUrl: "templates/friends.html"
     })
 
+    .state('additional_numbers', {
+      url: "/additional_numbers",
+templateUrl: "templates/additional_numbers.html"
+    })
+
     .state('profile', {
       url: "/profile",
 templateUrl: "templates/profile.html",

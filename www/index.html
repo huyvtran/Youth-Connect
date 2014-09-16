@@ -90,29 +90,30 @@
   </ion-content>
   </ion-side-menu>
   <ion-side-menu side="right">
-  <ion-header-bar class="bar bar-header bar-assertive">
-  <h1 class="title">Right Menu</h1>
+  <ion-header-bar class="bar bar-header bar-positive">
+  <h1 class="title">Press to Connect</h1>
   </ion-header-bar>
-  <ion-content>
+  <ion-content class="hotline">
   <ion-list>
     <ion-item nav-clear menu-close href="#/app/hotline1">
-      Hotline #1
+      <span><img src="img/phone.png" alt=""></span>Hotline #1
     </ion-item>
     <ion-item nav-clear menu-close href="#/app/hotline2">
-      Hotline #2
+      <span><img src="img/phone.png" alt=""></span>Hotline #2
     </ion-item>
     <ion-item nav-clear menu-close href="#/app/hotline3">
-    Hotline #3
+    <span><img src="img/phone.png" alt=""></span>Hotline #3
     </ion-item>
     <ion-item nav-clear menu-close href="#/app/textline1">
-    Text Line #1
-    </ion-item>
-    <ion-item nav-clear menu-close>
-    Additional Numbers
+    <span><img src="img/phone.png" alt=""></span>Text Line #1
     </ion-item>
   </ion-list>
   </ion-content>
+   <footer class="bar bar-footer bar-dark">
+            <div class="title">Additional Numbers</div><a ng-click="showRightMenu()" class="button  button-small button-clear ion-chevron-right button-stable" href="#/additional_numbers"></a>
+          </footer>
   </ion-side-menu>
+
 
   </ion-side-menus>
 
