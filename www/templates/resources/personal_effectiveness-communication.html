@@ -1,0 +1,14 @@
+<ion-view title="Communication" hide-back-button="false">
+<div class="bar bar-header">
+<button class="button button-icon icon ion-navicon"></button>
+<h1 class="title">Communication</h1>
+<button class="button button-icon icon ion-ios7-pulse-strong"></button>
+</div>
+        <ion-content class="no-padding">
+          <ion-slide-box on-slide-changed="slideChanged($index)">
+            <ion-slide show-pager="false" active-slide="activeSlide" ng-repeat="category in communication">
+<div class="slide{{category.image}}"> <button ng-if="currentSlide >= 1" ng-click="previousSlide()" class="button-large ion-chevron-left button-clear left"></button><span>{{category.title}}</span> <button ng-if="currentSlide >= 0" ng-click="nextSlide()" class="button-large ion-chevron-right button-clear right"></button><br /><span>{{category.desc}}</span></div>
+            </ion-slide >
+          </ion-slide-box>
+        </ion-content>
+</ion-view>

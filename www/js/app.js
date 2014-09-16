@@ -66,14 +66,14 @@ controller: 'ResourcesCtrl'
       .state('housing-tab', {
       url: "/housing",
       abstract: true,
-      templateUrl: "templates/housing-tabs.html"
+      templateUrl: "templates/resources/housing-tabs.html"
     })
 
     .state('housing-tab.homeless', {
       url: "/homeless",
       views: {
         'homeless-tab': {
-          templateUrl: "templates/housing-homeless.html",
+          templateUrl: "templates/resources/housing-homeless.html",
           controller: 'HousingCtrl'
         }
       }
@@ -83,7 +83,7 @@ controller: 'ResourcesCtrl'
       url: "/runaway",
       views: {
         'runaway-tab': {
-          templateUrl: "templates/housing-runaway.html",
+          templateUrl: "templates/resources/housing-runaway.html",
           controller: 'HousingCtrl'
         }
       }
@@ -93,11 +93,58 @@ controller: 'ResourcesCtrl'
       url: "/other",
       views: {
         'other-tab': {
-          templateUrl: "templates/housing-other.html",
+          templateUrl: "templates/resources/housing-other.html",
           controller: 'HousingCtrl'
         }
       }
     })
+
+.state('personal_effectiveness-tab', {
+url: "/personal_effectiveness",
+abstract: true,
+templateUrl: "templates/resources/personal_effectiveness-tabs.html"
+})
+
+.state('personal_effectiveness-tab.interpersonal_relationships', {
+url: "/interpersonal_relationships",
+views: {
+  'interpersonal_relationships-tab': {
+    templateUrl: "templates/resources/personal_effectiveness-interpersonal_relationships.html",
+    controller: 'PersonalEffectivenessCtrl'
+  }
+}
+})
+
+.state('personal_effectiveness-tab.self_determination', {
+url: "/self_determination",
+views: {
+  'self_determination-tab': {
+    templateUrl: "templates/resources/personal_effectiveness-self_determination.html",
+    controller: 'Personal_EffectivenessCtrl'
+  }
+}
+})
+
+.state('personal_effectiveness-tab.commmunication', {
+url: "/commmunication",
+views: {
+  'commmunication-tab': {
+    templateUrl: "templates/resources/personal_effectiveness-commmunication.html",
+    controller: 'Personal_EffectivenessCtrl'
+  }
+}
+})
+
+.state('personal_effectiveness-tab.parenting', {
+url: "/parenting",
+views: {
+  'parenting-tab': {
+    templateUrl: "templates/resources/personal_effectiveness-parenting.html",
+    controller: 'Personal_EffectivenessCtrl'
+  }
+}
+})
+
 
 
 
