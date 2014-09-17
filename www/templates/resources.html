@@ -6,7 +6,7 @@
 </div>
         <ion-content class="has-header resources">
           <div class="list">
-            <a class="item" ng-repeat="resource in resources" ng-click="goToSubdomain()">
+            <a class="item" ng-repeat="resource in resources" ng-click="{{resource.state}}">
               {{resource.name}}
               <p>{{resource.desc}}</p>
             </a>

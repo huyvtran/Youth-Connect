@@ -162,6 +162,61 @@ box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
   height:400px;
   box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
 }
+.slide6{
+  background-image: url('../img/categories/6.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide7{
+  background-image: url('../img/categories/7.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide8{
+  background-image: url('../img/categories/8.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide9{
+  background-image: url('../img/categories/9.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide10{
+  background-image: url('../img/categories/10.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide11{
+  background-image: url('../img/categories/11.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide12{
+  background-image: url('../img/categories/12.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide13{
+  background-image: url('../img/categories/13.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide14{
+  background-image: url('../img/categories/14.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide15{
+  background-image: url('../img/categories/15.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide16{
+  background-image: url('../img/categories/16.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
 
 .slider button{
   position:absolute;

@@ -59,6 +59,7 @@ var resources=
       name:"Housing",
       state: "homeless",
       desc:"What's your living situation?",
+      state:"goToHousing()",
       subdomain: [
 {
 "id":1,
@@ -86,6 +87,7 @@ var resources=
 name:"Personal Effectiveness",
  state: "personal_effectiveness/interpersonal",
       desc:"How do you relate to yourself and others?",
+      state: "goToPersonal()",
       subdomain: [
 {
 "id":0,
@@ -122,6 +124,7 @@ name:"Personal Effectiveness",
 name:"Health & Safety",
   state: "health_safety",
       desc:"Emotional, Physical Health & Wellbeing",
+      state: "goToHealth()",
       subdomain: [
 {
 "id":"0",
@@ -145,6 +148,7 @@ name:"Health & Safety",
 name:"Educational Opportunities",
   state: "educational_opporunities",
       desc:"When do you have enough education?",
+      state: "goToEducational()",
       subdomain: [
 {
 "id":0,
@@ -174,6 +178,7 @@ name:"Educational Opportunities",
 name:"Employment & Career",
   state: "employment",
       desc:"Do you want a job or a career?",
+      state: "goToEmployment()",
       subdomain: [
 {
 "id":0,
@@ -202,6 +207,7 @@ name:"Employment & Career",
 name:"Community-Life Functioning",
   state: "community",
       desc:"How do citizen's take care of themselves?",
+      state: "goToCommunity",
       subdomain: [
 {
 "id":0,
@@ -225,6 +231,7 @@ name:"Community-Life Functioning",
 name:"Leisure Activities",
   state: "leisure",
       desc:"Do you want to party? or maybe volunteer?",
+      state: "goToLeisure()",
       subdomain: [
 {
 "id":0,

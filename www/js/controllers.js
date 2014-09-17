@@ -67,8 +67,27 @@ $scope.nextSlide = function() {
 })
 
 .controller('ResourcesCtrl', function($scope, $state, Resources,$location) {
-  $scope.goToSubdomain = function() {
+  $scope.goToHousing = function() {
     $state.go('housing-tab.homeless');
+  };
+  $scope.goToPersonal = function() {
+    $state.go('personal-tab.interpersonal');
+  };
+  $scope.goToHealth = function() {
+    $state.go('health-tab.emotional');
+  };
+
+  $scope.goToEducational = function() {
+    $state.go('educational-tab.degrees');
+  };
+  $scope.goToEmployment = function() {
+    $state.go('employment-tab.competitive');
+  };
+  $scope.goToCommunity = function() {
+    $state.go('community-tab.daily');
+  };
+  $scope.goToLeisure = function() {
+    $state.go('leisure-tab.hobbies');
   };
   $scope.resources = Resources.all();
 })
@@ -80,82 +99,276 @@ $scope.nextSlide = function() {
     $scope.slideChanged = function(currSlide) {
         $scope.currentSlide = currSlide;
         $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
-        console.log('Active Slide=' + $scope.currentSlide);
-        console.log('Total Slides=' + $scope.totalSlides);
+
+
     }
     $scope.homeless = [
-    { title: 'Couch Surfing', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.', image: '1' },
-    { title: 'Living on the Streets', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '2' }
+    { title: 'Couch Surfing', desc: '', image: '1' },
+    { title: 'Living on the Streets', desc: '',image: '2' }
   ];
       $scope.runaway = [
-    { title: 'Coming Soon', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.', image: '1' }
+    { title: 'No information provided', desc: '', image: '3' }
   ];
       $scope.other = [
-        { title: 'Independent residence', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.', image: '1' },
-        { title: 'Residing with natural, adoptive, or foster family', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '2' },
-        { title: 'Other family situations (e.g., girlfriend’s family, extended family)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '3' },
-        { title: 'Semi-independent living (e.g., service coordinator assists but does not live on site)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '4' },
-        { title: 'Supported living (e.g., supervised apartment with a live in mentor or on site support staff at apartment complex)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '5' },
-        { title: 'Group home or boarding home', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '1' },
-        { title: 'Restrictive setting (e.g., crisis unit, residential treatment center, detention center)', desc: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.',image: '2' }
+        { title: 'Independent residence', desc: '', image: '4' },
+        { title: 'Residing with natural, adoptive, or foster family', desc: '',image: '5' },
+        { title: 'Other family situations (e.g., girlfriend’s family, extended family)', desc: '',image: '6' },
+        { title: 'Semi-independent living (e.g., service coordinator assists but does not live on site)', desc: '',image: '7' },
+        { title: 'Supported living (e.g., supervised apartment with a live in mentor or on site support staff at apartment complex)', desc: '',image: '8' },
+        { title: 'Group home or boarding home', desc: '',image: '9' },
+        { title: 'Restrictive setting (e.g., crisis unit, residential treatment center, detention center)', desc: '',image: '10'}
   ];
 
 })
 
 .controller('PersonalEffectivenessCtrl', function($scope, $ionicSlideBoxDelegate) {
 
-    $scope.currentSlide = 0;
 
     $scope.slideChanged = function(currSlide) {
         $scope.currentSlide = currSlide;
         $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
-        console.log('Active Slide=' + $scope.currentSlide);
-        console.log('Total Slides=' + $scope.totalSlides);
+
+
     }
 
     $scope.interpersonal_relationships = [
-      {"title":"Relationship development and maintenance of friendships","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":1},
-      {"title":"Balance of independence and interdependence with family members","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":2},
-      {"title":"Dating skills and development/maintenance of intimate relationships","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":3},
-      {"title":"Maintenance of relationships with mentors and informal key players","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":4}
+      {title:'Relationship development and maintenance of friendships',desc:'', image:1},
+      {title:'Balance of independence and interdependence with family members',desc:'', image:2},
+      {title:'Dating skills and development/maintenance of intimate relationships',desc:'', image:3},
+      {title:'Maintenance of relationships with mentors and informal key players',desc:'', image:4}
     ];
 
       $scope.self_determination = [
-        {"title":"Social problem solving (e.g., generate alternative options, make informed decisions)","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":5},
-        {"title":"Set goals and develop plans for achieving goals","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":6},
-        {"title":"Evaluate one’s progress in achieving goals","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":7},
-        {"title":"Accept one’s strengths and limitations","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":8},
-        {"title":"Advocate for one’s rights and positions","desc":"", "image" : 17},
-        {"title":"Develop one’s creativity","desc":"", "image" : 18},
-        {"title":"Right to fail","desc":"", "image" : 19}
+        {title:'Social problem solving (e.g., generate alternative options, make informed decisions)',desc:'', image:5},
+        {title:'Set goals and develop plans for achieving goals',desc:'', image:6},
+        {title:'Evaluate one’s progress in achieving goals',desc:'', image:7},
+        {title:'Accept one’s strengths and limitations',desc:'', image:8},
+        {title:'Advocate for one’s rights and positions',desc:'', image : 17},
+        {title:'Develop one’s creativity',desc:'', image : 18},
+        {title:'Right to fail',desc:'', image : 19}
     ];
       $scope.communication = [
-        {"title":"Express one’s ideas and feelings through speaking and listening","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":9},
-        {"title":"Reading and writing skills for learning, fun and communication","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":10},
-        {"title":"Knowledge of information sources (e.g., use of library, authorities, internet communications, and other resources)","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":11},
-        {"title":"Study and learning skills for gaining and applying new information","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":12},
-        {"title":"Cyberspace safety (e.g., revealing personal information, meeting contacts in person, use of credit cards online)","desc":""}
+        {title:'Express ones ideas and feelings through speaking and listening',desc:'', image:9},
+        {title:'Reading and writing skills for learning, fun and communication',desc:'', image:10},
+        {title:'Knowledge of information sources (e.g., use of library, authorities, internet communications, and other resources)',desc:'', image:11},
+        {title:'Study and learning skills for gaining and applying new information',desc:'', image:12},
+        {title:'Cyberspace safety (e.g., revealing personal information, meeting contacts in person, use of credit cards online)',desc:''}
       ];
   $scope.parenting = [
-    {"title":"Health of mother for the prenatal fetus (e.g., balanced diet, physical activity, adequate sleep, no smoking)","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":13},
-    {"title":"Recognizing when to see a physician for prenatal and postnatal care","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":14},
-    {"title":"Young adult male supports girlfriend/spouse in promoting the health of the mother and baby","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":15},
-    {"title":"Young adult male and female assuming responsibility for rearing the children (e.g., care and discipline, behavioral parenting practices, providing home setting, finances)","desc":"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.", "image":16}
+    {title:'Health of mother for the prenatal fetus (e.g., balanced diet, physical activity, adequate sleep, no smoking)',desc:'', image:13},
+    {title:'Recognizing when to see a physician for prenatal and postnatal care',desc:'', image:14},
+    {title:'Young adult male supports girlfriend/spouse in promoting the health of the mother and baby',desc:'', image:15},
+    {title:'Young adult male and female assuming responsibility for rearing the children (e.g., care and discipline, behavioral parenting practices, providing home setting, finances)',desc:'', image:16}
     ];
 
 })
 
-.controller('HealthSafetyCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('HealthCtrl', function($scope, $ionicSlideBoxDelegate) {
 
     $scope.currentSlide = 0;
 
     $scope.slideChanged = function(currSlide) {
         $scope.currentSlide = currSlide;
         $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
-        console.log('Active Slide=' + $scope.currentSlide);
-        console.log('Total Slides=' + $scope.totalSlides);
     }
+    $scope.emotional =[
+    {title:"Create reciprocal relationships with others", desc:'', image: 1},
+    {title:"Expression of care and concern for others", desc:'', image:10},
+    {title:"Social skills (e.g., positive feedback to others, acceptance of negative feedback, self-monitoring, self-evaluation)", desc:'', image:2},
+    {title:"Assertiveness skills and conflict resolution skills", desc: '', image:3},
+    {title:"Coping with stress and the ability to relax", desc:'', image:11},
+    {title:"Management of anger and moods", desc: '', image:4},
+    {title:"Spiritual wellbeing", desc: '', image:5},
+    {title:"Self-management of psychotropic medications and side effects", desc: '', image:6},
+    {title:"Manage use of alcohol and drugs",  desc: '', image:7},
+    {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
+    {title:"Avoid danger to self and others",desc:'', image:9}
+    ];
 
+    $scope.physical= [
+    {title:"Create reciprocal relationships with others", desc:'', image: 1},
+    {title:"Expression of care and concern for others", desc:'', image:10},
+    {title:"Social skills (e.g., positive feedback to others, acceptance of negative feedback, self-monitoring, self-evaluation)", desc:'', image:2},
+    {title:"Assertiveness skills and conflict resolution skills", desc: '', image:3},
+    {title:"Coping with stress and the ability to relax", desc:'', image:11},
+    {title:"Management of anger and moods", desc: '', image:4},
+    {title:"Spiritual wellbeing", desc: '', image:5},
+    {title:"Self-management of psychotropic medications and side effects", desc: '', image:6},
+    {title:"Manage use of alcohol and drugs",  desc: '', image:7},
+    {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
+    {title:"Avoid danger to self and others",desc:'', image:9}
+    ];
+
+})
+
+.controller('EducationalCtrl', function($scope, $ionicSlideBoxDelegate) {
+
+    $scope.currentSlide = 0;
+
+    $scope.slideChanged = function(currSlide) {
+        $scope.currentSlide = currSlide;
+        $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
+    }
+    //not the correct data
+    $scope.degrees = [
+    {title:"Create reciprocal relationships with others", desc:'', image: 1},
+    {title:"Expression of care and concern for others", desc:'', image:10},
+    {title:"Social skills (e.g., positive feedback to others, acceptance of negative feedback, self-monitoring, self-evaluation)", desc:'', image:2},
+    {title:"Assertiveness skills and conflict resolution skills", desc: '', image:3},
+    {title:"Coping with stress and the ability to relax", desc:'', image:11},
+    {title:"Management of anger and moods", desc: '', image:4},
+    {title:"Spiritual wellbeing", desc: '', image:5},
+    {title:"Self-management of psychotropic medications and side effects", desc: '', image:6},
+    {title:"Manage use of alcohol and drugs",  desc: '', image:7},
+    {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
+    {title:"Avoid danger to self and others",desc:'', image:9}
+    ];
+
+    $scope.certifications = [
+    {title:"Create reciprocal relationships with others", desc:'', image: 1},
+    {title:"Expression of care and concern for others", desc:'', image:10},
+    {title:"Social skills (e.g., positive feedback to others, acceptance of negative feedback, self-monitoring, self-evaluation)", desc:'', image:2},
+    {title:"Assertiveness skills and conflict resolution skills", desc: '', image:3},
+    {title:"Coping with stress and the ability to relax", desc:'', image:11},
+    {title:"Management of anger and moods", desc: '', image:4},
+    {title:"Spiritual wellbeing", desc: '', image:5},
+    {title:"Self-management of psychotropic medications and side effects", desc: '', image:6},
+    {title:"Manage use of alcohol and drugs",  desc: '', image:7},
+    {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
+    {title:"Avoid danger to self and others",desc:'', image:9}
+    ];
+
+    $scope.other = [
+    {title:"Create reciprocal relationships with others", desc:'', image: 1},
+    {title:"Expression of care and concern for others", desc:'', image:10},
+    {title:"Social skills (e.g., positive feedback to others, acceptance of negative feedback, self-monitoring, self-evaluation)", desc:'', image:2},
+    {title:"Assertiveness skills and conflict resolution skills", desc: '', image:3},
+    {title:"Coping with stress and the ability to relax", desc:'', image:11},
+    {title:"Management of anger and moods", desc: '', image:4},
+    {title:"Spiritual wellbeing", desc: '', image:5},
+    {title:"Self-management of psychotropic medications and side effects", desc: '', image:6},
+    {title:"Manage use of alcohol and drugs",  desc: '', image:7},
+    {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
+    {title:"Avoid danger to self and others",desc:'', image:9}
+    ];
+
+})
+
+.controller('EmploymentCtrl', function($scope, $ionicSlideBoxDelegate) {
+
+    $scope.currentSlide = 0;
+
+    $scope.slideChanged = function(currSlide) {
+        $scope.currentSlide = currSlide;
+        $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
+    }
+    $scope.competitive = [
+      {title:'Relationship development and maintenance of friendships',desc:'', image:1},
+      {title:'Balance of independence and interdependence with family members',desc:'', image:2},
+      {title:'Dating skills and development/maintenance of intimate relationships',desc:'', image:3},
+      {title:'Maintenance of relationships with mentors and informal key players',desc:'', image:4}
+    ];
+
+    $scope.work = [
+    {title:"Create reciprocal relationships with others", desc:'', image: 1},
+    {title:"Expression of care and concern for others", desc:'', image:10},
+    {title:"Social skills (e.g., positive feedback to others, acceptance of negative feedback, self-monitoring, self-evaluation)", desc:'', image:2},
+    {title:"Assertiveness skills and conflict resolution skills", desc: '', image:3},
+    {title:"Coping with stress and the ability to relax", desc:'', image:11},
+    {title:"Management of anger and moods", desc: '', image:4},
+    {title:"Spiritual wellbeing", desc: '', image:5},
+    {title:"Self-management of psychotropic medications and side effects", desc: '', image:6},
+    {title:"Manage use of alcohol and drugs",  desc: '', image:7},
+    {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
+    {title:"Avoid danger to self and others",desc:'', image:9}
+    ];
+
+    $scope.supported = [
+      {title:'Social problem solving (e.g., generate alternative options, make informed decisions)',desc:'', image:5},
+      {title:'Set goals and develop plans for achieving goals',desc:'', image:6},
+      {title:'Evaluate one’s progress in achieving goals',desc:'', image:7},
+      {title:'Accept one’s strengths and limitations',desc:'', image:8},
+      {title:'Advocate for one’s rights and positions',desc:'', image : 17},
+      {title:'Develop one’s creativity',desc:'', image : 18},
+      {title:'Right to fail',desc:'', image : 19}
+  ];
+
+  $scope.transitional = [
+    {title:'Relationship development and maintenance of friendships',desc:'', image:1},
+    {title:'Balance of independence and interdependence with family members',desc:'', image:2},
+    {title:'Dating skills and development/maintenance of intimate relationships',desc:'', image:3},
+    {title:'Maintenance of relationships with mentors and informal key players',desc:'', image:4}
+  ];
+
+})
+
+.controller('CommunityCtrl', function($scope, $ionicSlideBoxDelegate) {
+
+    $scope.currentSlide = 0;
+
+    $scope.slideChanged = function(currSlide) {
+        $scope.currentSlide = currSlide;
+        $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
+    }
+    $scope.daily = [
+      {title:'Relationship development and maintenance of friendships',desc:'', image:1},
+      {title:'Balance of independence and interdependence with family members',desc:'', image:2},
+      {title:'Dating skills and development/maintenance of intimate relationships',desc:'', image:3},
+      {title:'Maintenance of relationships with mentors and informal key players',desc:'', image:4}
+    ];
+
+      $scope.community = [
+        {title:'Social problem solving (e.g., generate alternative options, make informed decisions)',desc:'', image:5},
+        {title:'Set goals and develop plans for achieving goals',desc:'', image:6},
+        {title:'Evaluate one’s progress in achieving goals',desc:'', image:7},
+        {title:'Accept one’s strengths and limitations',desc:'', image:8},
+        {title:'Advocate for one’s rights and positions',desc:'', image : 17},
+        {title:'Develop one’s creativity',desc:'', image : 18},
+        {title:'Right to fail',desc:'', image : 19}
+    ];
+
+})
+
+.controller('LeisureCtrl', function($scope, $ionicSlideBoxDelegate) {
+
+    $scope.currentSlide = 0;
+
+    $scope.slideChanged = function(currSlide) {
+        $scope.currentSlide = currSlide;
+        $scope.totalSlides = $ionicSlideBoxDelegate.slidesCount()
+    }
+$scope.hobbies = [
+  {title:'Relationship development and maintenance of friendships',desc:'', image:1},
+  {title:'Balance of independence and interdependence with family members',desc:'', image:2},
+  {title:'Dating skills and development/maintenance of intimate relationships',desc:'', image:3},
+  {title:'Maintenance of relationships with mentors and informal key players',desc:'', image:4}
+];
+
+  $scope.volunteering = [
+    {title:'Social problem solving (e.g., generate alternative options, make informed decisions)',desc:'', image:5},
+    {title:'Set goals and develop plans for achieving goals',desc:'', image:6},
+    {title:'Evaluate one’s progress in achieving goals',desc:'', image:7},
+    {title:'Accept one’s strengths and limitations',desc:'', image:8},
+    {title:'Advocate for one’s rights and positions',desc:'', image : 17},
+    {title:'Develop one’s creativity',desc:'', image : 18},
+    {title:'Right to fail',desc:'', image : 19}
+];
+$scope.places = [
+  {title:'Relationship development and maintenance of friendships',desc:'', image:1},
+  {title:'Balance of independence and interdependence with family members',desc:'', image:2},
+  {title:'Dating skills and development/maintenance of intimate relationships',desc:'', image:3},
+  {title:'Maintenance of relationships with mentors and informal key players',desc:'', image:4}
+];
+
+  $scope.healthy = [
+    {title:'Social problem solving (e.g., generate alternative options, make informed decisions)',desc:'', image:5},
+    {title:'Set goals and develop plans for achieving goals',desc:'', image:6},
+    {title:'Evaluate one’s progress in achieving goals',desc:'', image:7},
+    {title:'Accept one’s strengths and limitations',desc:'', image:8},
+    {title:'Advocate for one’s rights and positions',desc:'', image : 17},
+    {title:'Develop one’s creativity',desc:'', image : 18},
+    {title:'Right to fail',desc:'', image : 19}
+];
 })
 
 .controller('LoginCtrl', function($scope, auth, $state, $ionicSlideBoxDelegate) {
@@ -177,7 +390,7 @@ $scope.nextSlide = function() {
     $state.go('dash');
   }, function(error) {
     // Oops something went wrong during login:
-    console.log("There was an error logging in", error);
+    console.log('There was an error logging in', error);
   });
   $scope.myActiveSlide = 0;
 })
