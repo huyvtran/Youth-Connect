@@ -147,7 +147,7 @@ $scope.nextSlide = function() {
 
 })
 
-.controller('PersonalEffectivenessCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('PersonalEffectivenessCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 
 
     $scope.slideChanged = function(currSlide) {
@@ -186,10 +186,34 @@ $scope.nextSlide = function() {
     {title:'Young adult male supports girlfriend/spouse in promoting the health of the mother and baby',desc:'', image:15},
     {title:'Young adult male and female assuming responsibility for rearing the children (e.g., care and discipline, behavioral parenting practices, providing home setting, finances)',desc:'', image:16}
     ];
+    $ionicModal.fromTemplateUrl('templates/resources/map_modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.showMap = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
 
 })
 
-.controller('HealthCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('HealthCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 
     $scope.currentSlide = 0;
 
@@ -224,10 +248,34 @@ $scope.nextSlide = function() {
     {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
     {title:"Avoid danger to self and others",desc:'', image:9}
     ];
+    $ionicModal.fromTemplateUrl('templates/resources/map_modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.showMap = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
 
 })
 
-.controller('EducationalCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('EducationalCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 
     $scope.currentSlide = 0;
 
@@ -277,10 +325,34 @@ $scope.nextSlide = function() {
     {title:"Avoid physical confrontations and criminal activities", desc:'', image:8},
     {title:"Avoid danger to self and others",desc:'', image:9}
     ];
+    $ionicModal.fromTemplateUrl('templates/resources/map_modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.showMap = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
 
 })
 
-.controller('EmploymentCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('EmploymentCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 
     $scope.currentSlide = 0;
 
@@ -325,10 +397,34 @@ $scope.nextSlide = function() {
     {title:'Dating skills and development/maintenance of intimate relationships',desc:'', image:3},
     {title:'Maintenance of relationships with mentors and informal key players',desc:'', image:4}
   ];
+  $ionicModal.fromTemplateUrl('templates/resources/map_modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.showMap = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
 
 })
 
-.controller('CommunityCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('CommunityCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 
     $scope.currentSlide = 0;
 
@@ -352,10 +448,34 @@ $scope.nextSlide = function() {
         {title:'Develop one’s creativity',desc:'', image : 18},
         {title:'Right to fail',desc:'', image : 19}
     ];
+    $ionicModal.fromTemplateUrl('templates/resources/map_modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.showMap = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
 
 })
 
-.controller('LeisureCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('LeisureCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 
     $scope.currentSlide = 0;
 
@@ -395,6 +515,30 @@ $scope.places = [
     {title:'Develop one’s creativity',desc:'', image : 18},
     {title:'Right to fail',desc:'', image : 19}
 ];
+$ionicModal.fromTemplateUrl('templates/resources/map_modal.html', {
+  scope: $scope,
+  animation: 'slide-in-up'
+}).then(function(modal) {
+  $scope.modal = modal;
+});
+$scope.showMap = function() {
+  $scope.modal.show();
+};
+$scope.closeModal = function() {
+  $scope.modal.hide();
+};
+//Cleanup the modal when we're done with it!
+$scope.$on('$destroy', function() {
+  $scope.modal.remove();
+});
+// Execute action on hide modal
+$scope.$on('modal.hidden', function() {
+  // Execute action
+});
+// Execute action on remove modal
+$scope.$on('modal.removed', function() {
+  // Execute action
+});
 })
 
 .controller('LoginCtrl', function($scope, auth, $state, $ionicSlideBoxDelegate) {
