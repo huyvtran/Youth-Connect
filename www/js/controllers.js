@@ -67,6 +67,7 @@ $scope.nextSlide = function() {
 })
 
 .controller('ResourcesCtrl', function($scope, $state, Resources,$location) {
+
   $scope.goToHousing = function() {
     $state.go('housing-tab.homeless');
   };
