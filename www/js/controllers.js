@@ -90,9 +90,10 @@ $scope.nextSlide = function() {
     $state.go('leisure-tab.hobbies');
   };
   $scope.resources = Resources.all();
+
 })
 
-.controller('HousingCtrl', function($scope, $ionicSlideBoxDelegate) {
+.controller('HousingCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 
     $scope.currentSlide = 0;
 
@@ -118,6 +119,30 @@ $scope.nextSlide = function() {
         { title: 'Group home or boarding home', desc: '',image: '9' },
         { title: 'Restrictive setting (e.g., crisis unit, residential treatment center, detention center)', desc: '',image: '10'}
   ];
+  $ionicModal.fromTemplateUrl('templates/resources/map_modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.showMap = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
 
 })
 

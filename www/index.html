@@ -34,14 +34,14 @@
   <ion-side-menus>
   <ion-side-menu-content ng-controller="NavCtrl">
   <ion-nav-bar class="bar-positive">
-  <ion-nav-back-button class="button-icon ion-arrow-left-c"></ion-nav-back-button>
+  <ion-nav-back-button class="button-icon ion-chevron-left"></ion-nav-back-button>
   </ion-nav-bar>
   <ion-nav-buttons side="left">
   <button class="button button-icon button-clear ion-navicon" ng-click="showMenu()">
   </button>
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
-  <button class="button button-icon button-clear ion-ios7-telephone" ng-click="showRightMenu()">
+  <button class="button button-icon button-clear ion-ios7-telephone button-assertive" ng-click="showRightMenu()">
   </button>
   </ion-nav-buttons>
   <ion-nav-view animation="slide-left-right"></ion-nav-view>
@@ -55,35 +55,29 @@
   <ion-item nav-clear menu-close href="#/dashboard">
     <span><img src="img/menu1.png"></span>Home
   </ion-item>
-  <ion-item nav-clear menu-close href="#/read">
-  <span><img src="img/menu2.png"></span>  Read
+  <ion-item nav-clear menu-close href="#/resources">
+  <span><img src="img/menu2.png"></span>  Resources
   </ion-item>
-  <ion-item nav-clear menu-close href="#/skills">
-    <span><img src="img/menu3.png"></span>Skils
+  <ion-item nav-clear menu-close href="#/eguru">
+    <span><img src="img/menu3.png"></span>eGuru
   </ion-item>
-  <ion-item nav-clear menu-close href="#/scenarios">
-  <span><img src="img/menu4.png"></span>  Scenarios
+  <ion-item nav-clear menu-close href="#/cheat">
+  <span><img src="img/menu5.png"></span>  Cheat Codes
   </ion-item>
-  <ion-item nav-clear menu-close href="#/game">
-    <span><img src="img/menu5.png"></span>Game
+  <ion-item nav-clear menu-close href="#/resources">
+    <span><img src="img/menu2.png"></span>Add Resource
   </ion-item>
-  <ion-item nav-clear menu-close href="#/inspiration">
-    <span><img src="img/menu6.png"></span>Inspiration
+  <ion-item nav-clear menu-close href="#/about">
+    <span><img src="img/menu10.png"></span>About Me
   </ion-item>
-  <ion-item nav-clear menu-close href="#/bookmarks">
-    <span><img src="img/menu7.png"></span>Bookmarks
+  <ion-item nav-clear menu-close href="#/settings">
+    <span><img src="img/menu3.png"></span>Settings
   </ion-item>
-  <ion-item nav-clear menu-close href="#/notes">
-  <span><img src="img/menu8.png"></span>  Notes
-  </ion-item>
-  <ion-item nav-clear menu-close href="#/friends">
-    <span><img src="img/menu9.png"></span>Friends
-  </ion-item>
-  <ion-item nav-clear menu-close href="#/profile">
-    <span><img src="img/menu10.png"></span>Profile
+  <ion-item nav-clear menu-close href="#/about_app">
+  <span><img src="img/menu8.png"></span>  About App
   </ion-item>
   <ion-item nav-clear menu-close ng-click=logout();>
-    Logout
+    <span><img src="img/menu9.png"></span>Logout
   </ion-item>
 
 </ion-list>
