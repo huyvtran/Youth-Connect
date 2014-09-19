@@ -1,9 +1,9 @@
-<ion-view title="Scenarios">
-  <ion-content class="has-header">
-<div class="list list-inset">
-<a class="item" ng-repeat= "scenario in scenarios" href="#/app/scenario/{{scenario.id}}">
-{{scenario.name}}
-</a>
-</div>
-  </ion-content>
+<ion-view title="Scenarios" hide-back-button="false">
+        <ion-content class="has-header resources beige">
+          <div class="list">
+            <a class="item item-text-wrap" ng-repeat="scenario in scenarios" href="#/scenario/{{scenario.id}}">
+              {{scenario.name}}
+            </a>
+          </div>
+        </ion-content>
 </ion-view>

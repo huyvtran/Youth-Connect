@@ -1,12 +1,8 @@
+</ion-nav-buttons>
 <ion-view title="Resources" hide-back-button="false">
-<div class="bar bar-header">
-<button class="button button-icon icon ion-navicon"></button>
-<h1 class="title">Resources</h1>
-<button class="button button-icon icon ion-ios7-pulse-strong"></button>
-</div>
-        <ion-content class="has-header resources">
+        <ion-content class="has-header resources beige">
           <div class="list">
-            <a class="item" ng-repeat="resource in resources" ng-click="{{resource.state}}">
+            <a class="item item-text-wrap" ng-repeat="resource in resources" ng-click="{{resource.state}}">
               {{resource.name}}
               <p>{{resource.desc}}</p>
             </a>

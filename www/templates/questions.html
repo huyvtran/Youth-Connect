@@ -1,0 +1,9 @@
+<ion-view title="Questions" hide-back-button="false">
+        <ion-content class="has-header resources beige">
+          <div class="list">
+            <a class="item item-text-wrap" ng-repeat="question in questions" href="#/question/{{question.id}}">
+              {{question.title}}
+            </a>
+          </div>
+        </ion-content>
+</ion-view>

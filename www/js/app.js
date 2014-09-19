@@ -56,6 +56,19 @@ templateUrl: "templates/dashboard.html",
 controller: 'DashCtrl'
     })
 
+    .state('questions', {
+      url: '/questions',
+templateUrl: "templates/questions.html",
+controller: 'QuestionsCtrl'
+    })
+
+//Resources detail state
+.state('question-detail', {
+  url: '/question/:questionId',
+templateUrl: 'templates/question-detail.html',
+controller: 'QuestionsDetailCtrl'
+})
+
     //Resources state
     .state('resources', {
       url: '/resources',

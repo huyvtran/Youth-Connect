@@ -58,12 +58,39 @@ $scope.nextSlide = function() {
 .controller('EguruCtrl', function($scope, auth, $state) {
 })
 
+.controller('QuestionsCtrl', function($scope, auth, $state, Questions) {
+  $scope.questions = Questions.all();
+})
+
+.controller('QuestionsDetailCtrl', function($scope, $stateParams, Questions, $location, $state) {
+  $scope.question = Questions.get($stateParams.questionId-1);
+
+  $scope.goToNextQuestion = function(currentQuestion) {
+  var questionId = currentQuestion +1;
+  console.log(currentQuestion)
+    if (currentQuestion <= 5) {
+    $location.path('/question/' + questionId)
+    }
+    else {
+      $state.go('eguru');
+    }
+  }
+})
+
 .controller('ScenariosCtrl', function($scope, auth, $state, Scenarios) {
   $scope.scenarios = Scenarios.all();
-  var s = $scope.scenarios;
 })
-.controller('ScenarioDetailCtrl', function($scope, $stateParams, Scenarios) {
-  $scope.scenario = Scenarios.get($stateParams.scenarioId);
+.controller('ScenarioDetailCtrl', function($scope, $stateParams, Scenarios, $location, $state) {
+  $scope.scenario = Scenarios.get($stateParams.scenarioId-1);
+
+  $scope.goToNextQuestion = function(currentScenario) {
+    if (currentScenario <= 19) {
+    $location.path('/scenario/' + (currentScenario+1))
+    }
+    else {
+      $state.go('eguru');
+    }
+  }
 })
 
 .controller('ResourcesCtrl', function($scope, $state, Resources,$location) {
