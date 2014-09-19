@@ -1,8 +1,19 @@
 <ion-view title="{{scenario.name}}">
-  <ion-content class="has-header">
+  <ion-content class="has-header beige has-footer">
+    <h1 class="scenario-header">{{scenario.name}}</h1>
+    <p class="padding">{{scenario.question}}</p>
+<button class="button button-full icon-right button-positive ion-thumbsup" ng-click="likeScenario(scenario.id)">
+  Like this scenario
+</button>
+<button class="button button-full icon-right button-calm ion-email" ng-click="shareScenario(scenario.question)">
+  Share this scenario
+</button>
+<button class="button button-full icon-right button-royal ion-help-circled pull-left" ui-sref="questions">
+Ask a question
+</button>
   </ion-content>
-  <div class="bar bar-footer bar-stable">
-    <div class="title">Next Scenario</div>
-    <i class="button button-clear ion-ios7-arrow-right"></i>
-  </div>
+<div class="bar bar-footer bar-dark" ng-click="goToNextQuestion(scenario.id)" >
+  <div class="title">Next scenario</div>
+  <button class="button button-clear"><i class="ion-chevron-right"></i></button>
+</div>
 </ion-view>

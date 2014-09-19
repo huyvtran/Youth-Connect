@@ -1,14 +1,32 @@
 <ion-view title="Volunteering" hide-back-button="false">
-<div class="bar bar-header">
-<button class="button button-icon icon ion-navicon"></button>
-<h1 class="title">Volunteering</h1>
-<button class="button button-icon icon ion-ios7-pulse-strong"></button>
-</div>
         <ion-content class="no-padding">
           <ion-slide-box on-slide-changed="slideChanged($index)">
             <ion-slide show-pager="false" active-slide="activeSlide" ng-repeat="category in volunteering">
 <div class="slide{{category.image}}"> <button ng-if="currentSlide >= 1" ng-click="previousSlide()" class="button-large ion-chevron-left button-clear left"></button><span>{{category.title}}</span> <button ng-if="currentSlide >= 0" ng-click="nextSlide()" class="button-large ion-chevron-right button-clear right"></button><br /><span>{{category.desc}}</span></div>
             </ion-slide >
           </ion-slide-box>
+          <div class="list card card-list">
+
+<div class="item item-avatar">
+  <img src="img/agency_icon.png">
+  <h2>Youth Achievement Center</h2>
+  <p>7700 W. 143rd Street, Overland Park KS</p>
+  <button class="button button-small button-balanced">
+913-624-2800
+</button>
+</div>
+<a class="item item-icon-left " href="#">
+<img src="img/clock.png" class="icon-image">
+  10:00am -6:00 pm
+</a>
+<a class="item item-icon-left" ng-click="showMap()">
+  <img src="img/map.png" class="icon-image">
+  Show on map
+</a>
+<a class="item item-icon-left" href="#">
+  <img src="img/globe.png" class="icon-image">
+  www.youthachievementcenter.com
+</a>
+</div>
         </ion-content>
 </ion-view>

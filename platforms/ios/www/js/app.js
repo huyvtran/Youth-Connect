@@ -35,131 +35,373 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: "LoginCtrl"
     })
 
-    // setup an abstract state for the tabs directive
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl',
-      data: {
-        // This tells Auth0 that this state requires the user to be logged in.
-        // If the user isn't logged in and he tries to access this state
-        // he'll be redirected to the login page
-        requiresLogin: true
-      }
-    })
+    // // setup an abstract state for the tabs directive
+    // .state('app', {
+    //   url: "/app",
+    //   abstract: true,
+    //   templateUrl: "templates/menu.html",
+    //   controller: 'AppCtrl',
+    //   data: {
+    //     // This tells Auth0 that this state requires the user to be logged in.
+    //     // If the user isn't logged in and he tries to access this state
+    //     // he'll be redirected to the login page
+    //     requiresLogin: true
+    //   }
+    // })
 
     // Your app states
-    .state('app.dash', {
+    .state('dash', {
       url: '/dashboard',
+templateUrl: "templates/dashboard.html",
+controller: 'DashCtrl'
+    })
+
+    .state('questions', {
+      url: '/questions',
+templateUrl: "templates/questions.html",
+controller: 'QuestionsCtrl'
+    })
+
+//Resources detail state
+.state('question-detail', {
+  url: '/question/:questionId',
+templateUrl: 'templates/question-detail.html',
+controller: 'QuestionsDetailCtrl'
+})
+
+    //Resources state
+    .state('resources', {
+      url: '/resources',
+templateUrl: "templates/resources.html",
+controller: 'ResourcesCtrl'
+    })
+
+      .state('housing-tab', {
+      url: "/housing",
+      abstract: true,
+      templateUrl: "templates/resources/housing-tabs.html"
+    })
+
+    .state('housing-tab.homeless', {
+      url: "/homeless",
       views: {
-        'menuContent' :{
-          templateUrl: "templates/dashboard.html",
-          controller: 'DashCtrl'
+        'homeless-tab': {
+          templateUrl: "templates/resources/housing-homeless.html",
+          controller: 'HousingCtrl'
         }
       }
     })
 
-    .state('app.read', {
+    .state('housing-tab.runaway', {
+      url: "/runaway",
+      views: {
+        'runaway-tab': {
+          templateUrl: "templates/resources/housing-runaway.html",
+          controller: 'HousingCtrl'
+        }
+      }
+    })
+
+    .state('housing-tab.other', {
+      url: "/other",
+      views: {
+        'other-tab': {
+          templateUrl: "templates/resources/housing-other.html",
+          controller: 'HousingCtrl'
+        }
+      }
+    })
+
+.state('personal-tab', {
+url: "/personal",
+abstract: true,
+templateUrl: "templates/resources/personal-tabs.html"
+})
+
+.state('personal-tab.interpersonal', {
+url: "/interpersonal",
+views: {
+  'interpersonal-tab': {
+    templateUrl: "templates/resources/personal-interpersonal.html",
+    controller: 'PersonalEffectivenessCtrl'
+  }
+}
+})
+
+.state('personal-tab.self', {
+url: "/self",
+views: {
+  'self-tab': {
+    templateUrl: "templates/resources/personal-self.html",
+    controller: 'PersonalEffectivenessCtrl'
+  }
+}
+})
+
+.state('personal-tab.communication', {
+url: "/communication",
+views: {
+  'communication-tab': {
+    templateUrl: "templates/resources/personal-communication.html",
+    controller: 'PersonalEffectivenessCtrl'
+  }
+}
+})
+
+.state('personal-tab.parenting', {
+url: "/parenting",
+views: {
+  'parenting-tab': {
+    templateUrl: "templates/resources/personal-parenting.html",
+    controller: 'PersonalEffectivenessCtrl'
+  }
+}
+})
+
+.state('health-tab', {
+url: "/health",
+abstract: true,
+templateUrl: "templates/resources/health-tabs.html"
+})
+
+.state('health-tab.emotional', {
+url: "/emotional",
+views: {
+  'emotional-tab': {
+    templateUrl: "templates/resources/health-emotional.html",
+    controller: 'HealthCtrl'
+  }
+}
+})
+.state('health-tab.physical', {
+url: "/physical",
+views: {
+  'physical-tab': {
+    templateUrl: "templates/resources/health-physical.html",
+    controller: 'HealthCtrl'
+  }
+}
+})
+
+.state('educational-tab', {
+url: "/educational",
+abstract: true,
+templateUrl: "templates/resources/educational-tabs.html"
+})
+
+.state('educational-tab.degrees', {
+url: "/degrees",
+views: {
+  'degrees-tab': {
+    templateUrl: "templates/resources/educational-degrees.html",
+    controller: 'EducationalCtrl'
+  }
+}
+})
+
+.state('educational-tab.certifications', {
+url: "/certifications",
+views: {
+  'certifications-tab': {
+    templateUrl: "templates/resources/educational-certifications.html",
+    controller: 'EducationalCtrl'
+  }
+}
+})
+
+.state('educational-tab.other', {
+url: "/other",
+views: {
+  'other-tab': {
+    templateUrl: "templates/resources/educational-other.html",
+    controller: 'EducationalCtrl'
+  }
+}
+})
+
+.state('employment-tab', {
+url: "/employment",
+abstract: true,
+templateUrl: "templates/resources/employment-tabs.html"
+})
+
+.state('employment-tab.competitive', {
+url: "/competitive",
+views: {
+  'competitive-tab': {
+    templateUrl: "templates/resources/employment-competitive.html",
+    controller: 'EmploymentCtrl'
+  }
+}
+})
+
+.state('employment-tab.work', {
+url: "/work",
+views: {
+  'work-tab': {
+    templateUrl: "templates/resources/employment-work.html",
+    controller: 'EmploymentCtrl'
+  }
+}
+})
+
+.state('employment-tab.supported', {
+url: "/supported",
+views: {
+  'supported-tab': {
+    templateUrl: "templates/resources/employment-supported.html",
+    controller: 'EmploymentCtrl'
+  }
+}
+})
+
+.state('employment-tab.transitional', {
+url: "/transitional",
+views: {
+  'transitional-tab': {
+    templateUrl: "templates/resources/employment-transitional.html",
+    controller: 'EmploymentCtrl'
+  }
+}
+})
+
+.state('community-tab', {
+url: "/community",
+abstract: true,
+templateUrl: "templates/resources/community-tabs.html"
+})
+
+
+.state('community-tab.daily', {
+url: "/daily",
+views: {
+  'daily-tab': {
+    templateUrl: "templates/resources/community-daily.html",
+    controller: 'CommunityCtrl'
+  }
+}
+})
+
+.state('community-tab.participation', {
+url: "/participation",
+views: {
+  'participation-tab': {
+    templateUrl: "templates/resources/community-participation.html",
+    controller: 'CommunityCtrl'
+  }
+}
+})
+
+.state('leisure-tab', {
+url: "/leisure",
+abstract: true,
+templateUrl: "templates/resources/leisure-tabs.html"
+})
+
+.state('leisure-tab.hobbies', {
+url: "/hobbies",
+views: {
+  'hobbies-tab': {
+    templateUrl: "templates/resources/leisure-hobbies.html",
+    controller: 'LeisureCtrl'
+  }
+}
+})
+
+.state('leisure-tab.volunteering', {
+url: "/volunteering",
+views: {
+  'volunteering-tab': {
+    templateUrl: "templates/resources/leisure-volunteering.html",
+    controller: 'LeisureCtrl'
+  }
+}
+})
+
+.state('leisure-tab.places', {
+url: "/places",
+views: {
+  'places-tab': {
+    templateUrl: "templates/resources/leisure-places.html",
+    controller: 'LeisureCtrl'
+  }
+}
+})
+
+.state('leisure-tab.healthy', {
+url: "/healthy",
+views: {
+  'healthy-tab': {
+    templateUrl: "templates/resources/leisure-healthy.html",
+    controller: 'LeisureCtrl'
+  }
+}
+})
+
+    //Eguru state
+    .state('eguru', {
+      url: '/eguru',
+templateUrl: "templates/eguru.html",
+controller: 'EguruCtrl'
+    })
+
+    .state('read', {
       url: "/read",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/read.html"
-        }
-      }
+templateUrl: "templates/read.html"
     })
 
-    .state('app.skills', {
+    .state('skills', {
       url: "/skills",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/skills.html"
-        }
-      }
+templateUrl: "templates/skills.html"
     })
 
-    .state('app.scenarios', {
+    .state('scenarios', {
       url: "/scenarios",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/scenarios.html"
-        }
-      }
+templateUrl: "templates/scenarios.html",
+controller: "ScenariosCtrl"
     })
 
-    .state('app.game', {
+    //Resources detail state
+    .state('scenario-detail', {
+      url: '/scenario/:scenarioId',
+templateUrl: 'templates/scenario-detail.html',
+controller: 'ScenarioDetailCtrl'
+    })
+
+    .state('game', {
       url: "/game",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/game.html"
-        }
-      }
+templateUrl: "templates/game.html"
     })
 
-    .state('app.inspiration', {
+    .state('inspiration', {
       url: "/inspiration",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/inspiration.html"
-        }
-      }
+templateUrl: "templates/inspiration.html"
     })
 
-    .state('app.bookmarks', {
+    .state('bookmarks', {
       url: "/bookmarks",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/bookmarks.html"
-        }
-      }
+templateUrl: "templates/bookmarks.html"
     })
 
-    .state('app.notes', {
+    .state('notes', {
       url: "/notes",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/notes.html"
-        }
-      }
+templateUrl: "templates/notes.html"
     })
 
-    .state('app.friends', {
+    .state('friends', {
       url: "/friends",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/friends.html"
-        }
-      }
+templateUrl: "templates/friends.html"
     })
 
-    .state('app.profile', {
+    .state('additional_numbers', {
+      url: "/additional_numbers",
+templateUrl: "templates/additional_numbers.html"
+    })
+
+    .state('profile', {
       url: "/profile",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/profile.html",
-          controller: 'ProfileCtrl'
-        }
-      }
-    })
-
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-    .state('app.single', {
-      url: "/playlists/:playlistId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
-        }
-      }
+templateUrl: "templates/profile.html",
+controller: 'ProfileCtrl'
     });
 
   // Configure Auth0
@@ -176,7 +418,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   $httpProvider.interceptors.push('authInterceptor');
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/dashboard');
 
 })
 

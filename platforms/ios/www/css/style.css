@@ -1,25 +1,102 @@
-/* Empty. Add your own CSS if you like */
-.slider {
-height: 220px;
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular_0.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/OpenSans-Regular_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/OpenSans-Regular_0.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/OpenSans-Regular_0.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/OpenSans-Regular_0.svg#dc56f0938c09c27a4156bb0f8f5176a2') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
 }
 
-.slide-attributes{
-background-repeat: no-repeat;
-background-position: center 0;
-height: 220px;
-background-size: 100% auto;
+@font-face {
+  font-family: 'Open Sans Semibold';
+  src: url('../fonts/OpenSans-Semibold_0.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/OpenSans-Semibold_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/OpenSans-Semibold_0.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/OpenSans-Semibold_0.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/OpenSans-Semibold_0.svg#b96880fafbf6b051ff49d9fe8a31137c') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  700;
 }
-.slide1{
-background-image: url("../img/slide1.jpg");
+
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('../fonts/OpenSans-Light_0.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/OpenSans-Light_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/OpenSans-Light_0.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/OpenSans-Light_0.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/OpenSans-Light_0.svg#09be4bfe8975a657af6444a6f1d73848') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  200;
 }
-.slide2{
-background-image: url("../img/slide2.jpg");
+
+
+.no-padding{
+  padding:0;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
 }
-.slide3{
-background-image: url("../img/slide3.jpg");
+.beige{
+  background-color:#eeeee4;
 }
-.slide4{
-background-image: url("../img/slide4.jpg");
+
+.card-list{
+font-family: 'Open Sans Light';
+}
+.card-list img{
+  width:20px;
+}
+.resources .item  {
+  background-color:#4376a7;
+  border-radius: 6px;
+  margin:20px;
+  color:white;
+  text-align:center;
+}
+.resources p {
+  color:white;
+  font-family: 'Open Sans';
+}
+.resources a{
+  font-family: 'Open Sans Semibold';
+}
+
+.resources .list{
+  padding-left: 20px;
+padding-right: 20px;
+padding-top:10px;
+}
+
+.hotline .item-complex .item-content, .item-radio .item-content .item {
+  background-color:#fd5256;
+  border-radius: 6px;
+  margin-bottom:20px;
+  color:white;
+  text-align:center;
+  font-family: 'Open Sans';
+}
+.hotline .list{
+  padding-left: 20px;
+padding-right: 20px;
+padding-top:20px;
+}
+
+
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 0px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 #login{
   height:455px;
@@ -39,8 +116,14 @@ background-image: url("../img/slide4.jpg");
   width: 100px;
   height: 100px;
 }
+.cream{
+  background-color: #eeeee4;
+}
 .center{
   text-align: center;
+  font-family:'Open Sans Semibold';
+  font-size: 16px;
+  padding-top: 16px;
 }
 .home-circle{
   width: 100px;
@@ -51,10 +134,186 @@ border-radius: 100px;
     margin: 0 auto;
   text-align: center;
   display:block;
-border: 3px solid #47A0DB;
-background-image: url("../img/resources.svg");
-background-repeat: no-repeat;
-background-position: center center;
-background-size: 50% 50%;
+}
+.menu1 {
+  background-color: #5c99bf;
+  background-image: url('../img/dashboard1.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
 
+.menu2{
+background-color: #25a790;
+background-image: url('../img/dashboard2.png');
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+}
+.menu3{
+background-color: #0cadb6;
+background-image: url('../img/dashboard3.png');
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+}
+.menu4{
+background-color: #728cc0;
+background-image: url('../img/dashboard4.png');
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+}
+
+.slide1{
+  background-image: url('../img/categories/1.jpg');
+  height:400px;
+box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide2{
+  background-image: url('../img/categories/2.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide3{
+  background-image: url('../img/categories/3.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide4{
+  background-image: url('../img/categories/4.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide5{
+  background-image: url('../img/categories/5.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide6{
+  background-image: url('../img/categories/6.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide7{
+  background-image: url('../img/categories/7.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide8{
+  background-image: url('../img/categories/8.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide9{
+  background-image: url('../img/categories/9.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide10{
+  background-image: url('../img/categories/10.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide11{
+  background-image: url('../img/categories/11.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide12{
+  background-image: url('../img/categories/12.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide13{
+  background-image: url('../img/categories/13.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide14{
+  background-image: url('../img/categories/14.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide15{
+  background-image: url('../img/categories/15.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+.slide16{
+  background-image: url('../img/categories/16.jpg');
+  height:400px;
+  box-shadow: inset 0 0 0 2800px rgba(0,0,0,.2);
+}
+
+.slider button{
+  position:absolute;
+  top:40%;
+}
+
+.slider button.right{
+  right:0;
+}
+
+.slider button.left{
+  left:0;
+}
+.slider span {
+position: absolute;
+padding-top: 90px;
+text-align: center;
+width: 50%;
+left: 25%;
+color: white;
+font-family:'Open Sans Semibold';
+height:250px;
+}
+span img{
+  padding-right: 10px;
+  width: 32px;
+}
+.transparent .bar{
+  background-color: transparent !important;
+}
+.sidemenu_bg {
+background-image: url('../img/sidemenu_bg.png') !important;
+background-repeat: no-repeat;
+background-size: cover;
+background-position-x: 0;
+background-position-y: 0;
+}
+.sidemenu_bg .item{
+font-family: 'Open Sans';
+background-color: transparent;
+color:rgba(255,255,255,.35);
+border-color: 1px solid rgba(255,255,255,.1)
+}
+
+.sidemenu_bg .item-content{
+  font-family: 'Open Sans';
+  background-color: transparent;
+color:rgba(255,255,255,.35);
+border-color: 1px solid rgba(255,255,255,.1)
+}
+.bar.bar-light {
+  background-image: url('../img/sidemenu_bg.png') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 0;
+  background-position-y: 0;
+}
+.bar.bar-light .title {
+  color:rgba(255,255,255,.35);
+}
+
+.bar{
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+.sidemenu_bg .item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated{
+font-family: 'Open Sans';
+background-color: transparent;
+color:#40a0fe;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  font-family: 'Open Sans';
 }
