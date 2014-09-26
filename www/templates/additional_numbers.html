@@ -1,18 +1,17 @@
 <ion-view title="Additional Numbers">
-  <ion-content class="has-header">
-    <ion-list>
-      <ion-item nav-clear menu-close href="#/app/hotline1">
-        <span><img src="img/phone.png" alt=""></span>Hotline #1
+<ion-content scroll="true" class="has-header">
+    <div data-ng-repeat="(letter, providers) in sorted_providers" class="alpha_list">
+      <ion-item class="item item-divider" id="index_{{letter}}">
+        {{letter}}
       </ion-item>
-      <ion-item nav-clear menu-close href="#/app/hotline2">
-        <span><img src="img/phone.png" alt=""></span>Hotline #2
+      <ion-item ng-repeat="number in providers" href="tel:{{number.phone}}">
+        {{number.name}}
       </ion-item>
-      <ion-item nav-clear menu-close href="#/app/hotline3">
-      <span><img src="img/phone.png" alt=""></span>Hotline #3
-      </ion-item>
-      <ion-item nav-clear menu-close href="#/app/textline1">
-      <span><img src="img/phone.png" alt=""></span>Text Line #1
-      </ion-item>
-    </ion-list>
-  </ion-content>
+    </div>
+	</ion-content>
+   <ul class="alpha_sidebar">
+      <li ng-click="gotoList('index_{{letter}}')"ng-repeat="letter in alphabet">
+          {{letter}}
+      </li>
+    </ul>
 </ion-view>

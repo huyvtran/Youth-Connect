@@ -1,5 +1,515 @@
 angular.module('starter.controllers', [])
 
+.controller('AdditionalNumbersCtrl', function($scope, $stateParams, $location, $ionicScrollDelegate, $log ) {
+  $scope.providers  = [   {
+    "name":"Abortion - Post-Abortion Project Rachel",
+    "phone":"1-800-593-2273"
+  },
+  {
+    "name":"Abortion Federation Hotline (National)",
+    "phone":"1-800-772-9100"
+  },
+  {
+    "name":"Adoption - Independent Adoption Center",
+    "phone":"1-800-877-6736"
+  },
+  {
+    "name":"Adoption Center (National)",
+    "phone":"1-877-648-4400"
+  },
+  {
+    "name":"Adoptions- Rosie Adoptions -(if you are pregnant)",
+    "phone":"1-800-841-0804"
+  },
+  {
+    "name":"AIDA Info - Centers for Disease Control",
+    "phone":"1-800-342-2437"
+  },
+  {
+    "name":"AIDS National Hotline",
+    "phone":"1-800-342-2437"
+  },
+  {
+    "name":"AIDS Treatment Information Services",
+    "phone":"1-800-448-0440"
+  },
+  {
+    "name":"Al-Anon Family Group Headquarters",
+    "phone":"1-800-356-9996"
+  },
+  {
+    "name":"Al-Anon/Alateen Hotline",
+    "phone":"1-800-344-2666"
+  },
+  {
+    "name":"Alcohol/Drug Abuse Hotline (National)",
+    "phone":"1-800-662-4357"
+  },
+  {
+    "name":"Be Sober Hotline",
+    "phone":"1-800-237-6237"
+  },
+  {
+    "name":"Birthright",
+    "phone":"1-800-550-4900"
+  },
+  {
+    "name":"Boys Town National Hotline",
+    "phone":"1-800-448-3000"
+  },
+  {
+    "name":"Care Net",
+    "phone":"1-800-395-4357"
+  },
+  {
+    "name":"Center for the Prevention of School Violence",
+    "phone":"1-800-299-6504"
+  },
+  {
+    "name":"CHADD-Children & Adults with Attention Deficit/Hyperactivity Disorder",
+    "phone":"1-800-233-4050"
+  },
+  {
+    "name":"Child Abuse Hotline (National)",
+    "phone":"1-800-422-4453"
+  },
+  {
+    "name":"Cocaine Help Line",
+    "phone":"1-800-262-2463"
+  },
+  {
+    "name":"Cocaine Hotline (24 Hour)",
+    "phone":"1-800-992-9239"
+  },
+  {
+    "name":"Covenant House Nineline",
+    "phone":"1-800-999-9999"
+  },
+  {
+    "name":"Crisis Hotline (National)",
+    "phone":"1-800-448-4663"
+  },
+  {
+    "name":"Crisis Intervention & Counseling Nineline",
+    "phone":"1-800-999-9999"
+  },
+  {
+    "name":"Domestic Violence (National Resource Center on)",
+    "phone":"1-800-537-2238"
+  },
+  {
+    "name":"Domestic Violence Hotline (KC Metro)",
+    "phone":"816-468-5463"
+  },
+  {
+    "name":"Domestic Violence Hotline (National)",
+    "phone":"1-800-799-7233"
+  },
+  {
+    "name":"Domestic Violence Hotline #2",
+    "phone":"1-800-548-2722"
+  },
+  {
+    "name":"Domestic Violence Hotline/Child Abuse",
+    "phone":"1-800 422 4453"
+  },
+  {
+    "name":"Drug Abuse & Alcoholism (National Institute on)",
+    "phone":"1-888-644-6432"
+  },
+  {
+    "name":"Drug Abuse Hotline (National)",
+    "phone":"1-800-662-4357"
+  },
+  {
+    "name":"Drug Help National Helplines",
+    "phone":"1-800-378-4435"
+  },
+  {
+    "name":"Eating Disorders Awareness and Prevention",
+    "phone":"1-800-931-2237"
+  },
+  {
+    "name":"Eating Disorders Center",
+    "phone":"1-888-236-1188"
+  },
+  {
+    "name":"Ecstasy Addiction",
+    "phone":"1-800-468-6933"
+  },
+  {
+    "name":"Emergency Contraception Information",
+    "phone":"1-888-668-2528"
+  },
+  {
+    "name":"Family Violence Prevention Center",
+    "phone":"1-800-313-1310"
+  },
+  {
+    "name":"Food Addiction",
+    "phone":"1-800-872-0088"
+  },
+  {
+    "name":"Gay & Lesbian National Hotline",
+    "phone":"1-888-843-4564"
+  },
+  {
+    "name":"Gay & Transgender Hate Crime Hotline",
+    "phone":"1-800-616-4283"
+  },
+  {
+    "name":"Gay, Lesbian, Bisexual, and Transgender (GLBT) Youth Support Line",
+    "phone":"1-800-850-8078"
+  },
+  {
+    "name":"Headache Foundation",
+    "phone":"1-800-843-2256"
+  },
+  {
+    "name":"Healing Woman Foundation (Abuse)",
+    "phone":"1-800-477-4111"
+  },
+  {
+    "name":"Help Finding a Therapist",
+    "phone":"1-800-843-7274"
+  },
+  {
+    "name":"Herpes Resource Center",
+    "phone":"1-800-230-6039"
+  },
+  {
+    "name":"Homeless - Artists Helping the Homeless (transportation to shelter)",
+    "phone":"816-668-1007"
+  },
+  {
+    "name":"Homeless - reStart 24 Hour Line",
+    "phone":"816-472-5664"
+  },
+  {
+    "name":"Homeless Hotline",
+    "phone":"816-474-4599"
+  },
+  {
+    "name":"Homeless/Runaway National Runaway Hotline",
+    "phone":"1-800-231-6946"
+  },
+  {
+    "name":"Human Trafficking Resource Center (National)",
+    "phone":"1-888-373-7888"
+  },
+  {
+    "name":"Human Trafficking Text \"BeFree\" to",
+    "phone":"233733"
+  },
+  {
+    "name":"Incest Awareness Foundation",
+    "phone":"1-888-547-3222"
+  },
+  {
+    "name":"Incest Hotline for guys: M.A.L.E.",
+    "phone":"1-800-949-6253"
+  },
+  {
+    "name":"Inhalant Prevention Coalition (National)",
+    "phone":"1-800-269-4327"
+  },
+  {
+    "name":"Kansas Department for Children and Families Abuse Hotline",
+    "phone":"1-800-922-5330"
+  },
+  {
+    "name":"Learning Disabilities - (National Center For)",
+    "phone":"1-888-575-7373"
+  },
+  {
+    "name":"LGBT - Kansas City Anti Violence Project for LGBT",
+    "phone":"816-561-0550"
+  },
+  {
+    "name":"Lyme Disease Hotline",
+    "phone":"1-800-886-5963"
+  },
+  {
+    "name":"Marijuana Anonymous",
+    "phone":"1-800-766-6779"
+  },
+  {
+    "name":"Mental Health - Compassionate Ear Warm Line",
+    "phone":"913-281-2221"
+  },
+  {
+    "name":"Mental Health - Rediscover 24 Hour Crisis Line",
+    "phone":"816-966-0900"
+  },
+  {
+    "name":"Mental Health - Wyandot Center Crisis Hotline",
+    "phone":"913-788-4200"
+  },
+  {
+    "name":"Mental Health Crisis Hotline (Johnson County)",
+    "phone":"913-826-4200 (daytime hours)"
+  },
+  {
+    "name":"Mental Health InfoSource",
+    "phone":"1-800-447-4474"
+  },
+  {
+    "name":"Missing & Exploited Children Hotline (National)",
+    "phone":"1-800-843-5678"
+  },
+  {
+    "name":"Missouri Children’s Division Child Abuse Hotline",
+    "phone":"1-800-392-3738"
+  },
+  {
+    "name":"MOCSA Sexual Abuse Hotline (KS)",
+    "phone":"913-642-0233"
+  },
+  {
+    "name":"MOCSA Sexual Abuse Hotline (MO)",
+    "phone":"816-531-0233"
+  },
+  {
+    "name":"Mothers Against Drunk Drivers",
+    "phone":"1-800-438-6233"
+  },
+  {
+    "name":"National Association for Children of Alcoholics",
+    "phone":"1-888-554-2627"
+  },
+  {
+    "name":"National Institute of Mental Health (NIMH)",
+    "phone":"1-888-269-4389"
+  },
+  {
+    "name":"National Mental Health Association",
+    "phone":"1-800-969-6642"
+  },
+  {
+    "name":"National Office of Post Abortion Trauma",
+    "phone":"1-800-593-2273"
+  },
+  {
+    "name":"National Runaway Safeline (National)",
+    "phone":"1-800-786-2929"
+  },
+  {
+    "name":"National SafePlace TXT 4 HELP (National)",
+    "phone":"Text SAFE and your current location (address/city/state) to 69866"
+  },
+  {
+    "name":"National Victim Center",
+    "phone":"1-800-394-2255"
+  },
+  {
+    "name":"Nurse Advice Line (Children's Mercy)",
+    "phone":"816-234-3188"
+  },
+  {
+    "name":"Nurseline (Saint Luke's)",
+    "phone":"816-932-6220"
+  },
+  {
+    "name":"Panic Disorder Information Hotline",
+    "phone":"1-800-647-2642"
+  },
+  {
+    "name":"Parent Helpline (National)",
+    "phone":"1-855-427-2736"
+  },
+  {
+    "name":"People Against Rape",
+    "phone":"1-800-877-7252"
+  },
+  {
+    "name":"Pet Loss Support Hotline - Grief Counseling Hotline",
+    "phone":"1-888-478-7574"
+  },
+  {
+    "name":"Planned Parenthood, Inc.",
+    "phone":"1-800-230-7526"
+  },
+  {
+    "name":"PMS Access",
+    "phone":"1-800-222-4767"
+  },
+  {
+    "name":"Pregnancy Hotline",
+    "phone":"1-800-467-8466"
+  },
+  {
+    "name":"Pregnancy Resource Option Line",
+    "phone":"1-800-712-4357"
+  },
+  {
+    "name":"Pregnancy Resource Option LineText: HELPLINE to ",
+    "phone":"313131"
+  },
+  {
+    "name":"Pregnant & Young Hotline (Birthright)",
+    "phone":"1-800 550-4900"
+  },
+  {
+    "name":"Rape, Abuse, Incest, National Network (RAINN)",
+    "phone":"1-800-656-4673"
+  },
+  {
+    "name":"reStart 24 Hour Youth Hotline ",
+    "phone":"816-309-9048"
+  },
+  {
+    "name":"Runaway and Homeless Youth (ages 12-21) - KidsTLC SOS 24 Hour Hotline for ",
+    "phone":"913-324-3619"
+  },
+  {
+    "name":"Runaway Hotline",
+    "phone":"1-800-231-6946"
+  },
+  {
+    "name":"Runaway Hotline (National)",
+    "phone":"1-800-621-4000"
+  },
+  {
+    "name":"SAFE (Self Abuse Finally Ends) Alternatives Program",
+    "phone":"www.selfinjury.com"
+  },
+  {
+    "name":"Safe Choice Hotline (STDs & Pregnancy)",
+    "phone":"1-800-878-2347"
+  },
+  {
+    "name":"Self-Injury Hotline",
+    "phone":"1-800-366-8288"
+  },
+  {
+    "name":"Sexual Assault Hotline",
+    "phone":"1-800-656-4673"
+  },
+  {
+    "name":"Society's League Against Molestation",
+    "phone":"1-800-491-WATCH"
+  },
+  {
+    "name":"STD Hotline (National)",
+    "phone":"1-800-227-8922"
+  },
+  {
+    "name":"Stop It Now! (Sexual Abuse)",
+    "phone":"1-888-773-8368"
+  },
+  {
+    "name":"Suicide & Crisis Hotline",
+    "phone":"1-800-999-9999"
+  },
+  {
+    "name":"Suicide Hotline (National Adolescent)",
+    "phone":"1-800-621-4000"
+  },
+  {
+    "name":"Suicide Hotline (National)",
+    "phone":"1-800-784-2433"
+  },
+  {
+    "name":"Suicide Prevention - The Trevor HelpLine - (Gay and lesbian youth suicide prevention).",
+    "phone":"1-800-850-8078"
+  },
+  {
+    "name":"Suicide Prevention Lifeline (National)",
+    "phone":"1-800-273-8255"
+  },
+  {
+    "name":"Synergy Services 24 Hour Youth Crisis Hotline",
+    "phone":"816-741-8700"
+  },
+  {
+    "name":"Teen Helpline",
+    "phone":"1-800-400-0900"
+  },
+  {
+    "name":"TeenLine",
+    "phone":"1-800-522-8336"
+  },
+  {
+    "name":"United Way 211 (info/refferal)",
+    "phone":"211"
+  },
+  {
+    "name":"Voices In Action (Incest & Child Abuse Treatment)",
+    "phone":"1-800-786-4238"
+  },
+  {
+    "name":"WAVE (Working Against Violence Everywhere)",
+    "phone":"1-888-960-9600"
+  },
+  {
+    "name":"Youth Crisis Hotline",
+    "phone":"1-800-448-4663"
+  },
+  {
+    "name":"Youth Crisis Hotline #2",
+    "phone":"1-800-422-0009"
+  } ];
+  var providers = $scope.providers;
+  var log = [];
+
+  $scope.alphabet = iterateAlphabet();
+
+  //Sort user list by first letter of name
+  var tmp={};
+  for(i=0;i<providers.length;i++){
+    var letter=providers[i].name.toUpperCase().charAt(0);
+    if( tmp[ letter] ==undefined){
+      tmp[ letter]=[]
+    }
+      tmp[ letter].push( providers[i] );
+  }
+  $scope.sorted_providers = tmp;
+
+  //Click letter event
+  $scope.gotoList = function(id){
+    $location.hash(id);
+    $ionicScrollDelegate.anchorScroll();
+  }
+
+  //Create alphabet object
+  function iterateAlphabet()
+  {
+     var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+     var numbers = new Array();
+     for(var i=0; i<str.length; i++)
+     {
+        var nextChar = str.charAt(i);
+        numbers.push(nextChar);
+     }
+     return numbers;
+  }$scope.groups = [];
+  for (var i=0; i<10; i++) {
+    $scope.groups[i] = {
+      name: i,
+      items: []
+    };
+    for (var j=0; j<3; j++) {
+      $scope.groups[i].items.push(i + '-' + j);
+    }
+  }
+
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+
+})
+
 .controller('NavCtrl', function($scope, auth, $state,$ionicSideMenuDelegate, $ionicSlideBoxDelegate) {
   $scope.auth = auth;
   $scope.logout = function() {
@@ -18,6 +528,7 @@ $scope.nextSlide = function() {
   $scope.previousSlide = function() {
     $ionicSlideBoxDelegate.previous();
   }
+
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -67,6 +578,17 @@ $scope.nextSlide = function() {
 
   $scope.goToNextQuestion = function(currentQuestion) {
   var questionId = currentQuestion +1;
+  console.log(currentQuestion)
+    if (currentQuestion <= 5) {
+    $location.path('/question/' + questionId)
+    }
+    else {
+      $state.go('eguru');
+    }
+  }
+
+  $scope.goToPreviousQuestion = function(currentQuestion) {
+  var questionId = currentQuestion -1;
   console.log(currentQuestion)
     if (currentQuestion <= 5) {
     $location.path('/question/' + questionId)

@@ -395,7 +395,8 @@ templateUrl: "templates/friends.html"
 
     .state('additional_numbers', {
       url: "/additional_numbers",
-templateUrl: "templates/additional_numbers.html"
+templateUrl: "templates/additional_numbers.html",
+controller: "AdditionalNumbersCtrl"
     })
 
     .state('profile', {
