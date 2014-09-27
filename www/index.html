@@ -7,12 +7,19 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <script src="http://cdn.auth0.com/w2/auth0-4.js"></script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <!-- Auth0 Login Widget -->
-    <script src="lib/auth0-widget.js/build/auth0-widget.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
 
-    <!-- Custom UI for login -->
+    <script src="lib/auth0-angular/build/auth0-angular.js"></script>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
     <!-- <script src="http://cdn.auth0.com/w2/auth0-2.1.js"></script> -->
 
     <!-- Cookies are used by auth0-angular -->
@@ -25,6 +32,7 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="js/auth0-variables.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>

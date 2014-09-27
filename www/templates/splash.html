@@ -1,0 +1,28 @@
+<div class="bar bar-header splash-header">
+  <button class="button button-icon button-clear pull-right ion-ios7-telephone button-assertive" ng-click="showRightMenu()"></button>
+</div>
+<ion-content class="splash has-header" ng-controller="LocationCtrl">
+  <h1>Youth Connect</h1>
+  <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="true" auto-play="true">
+  <ion-slide>
+    <div class=""><img src="img/splash1.png" alt="">
+    <p>Dynamic Assistance for Thriving,
+not just Surviving Life</p></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box yellow"><h1>Slide 2</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box pink"><h1>Slide 3</h1></div>
+  </ion-slide>
+</ion-slide-box>
+
+<button class="button button-block button-positive" ng-click="go('/login')">
+  Sign In
+</button>
+<button class="button button-block button-balanced" ng-click="go('/register')">
+  Sign Up
+</button>
+<p ng-click="go('/dashboard')">Not now, just looking</p>
+</ion-content>
+</ion-view>

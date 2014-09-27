@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'auth0'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCookies', 'auth0'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -33,6 +33,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: "/login",
       templateUrl: "templates/login.html",
       controller: "LoginCtrl"
+    })
+
+    .state('register', {
+      url: "/register",
+      templateUrl: "templates/register.html",
+      controller: "RegisterCtrl"
+    })
+
+    .state('splash', {
+      url: "/splash",
+      templateUrl: "templates/splash.html"
     })
 
     // // setup an abstract state for the tabs directive
@@ -405,25 +416,21 @@ templateUrl: "templates/profile.html",
 controller: 'ProfileCtrl'
     });
 
+
+
   // Configure Auth0
   authProvider.init({
-   domain: 'youthconnect.auth0.com',
-   clientID: 'GWdPLDnNOoJAcFTMtjlpLb57y4ui5hNL',
-   callbackURL: location.href,
-   // This is the name of the state to redirect to if the user tries to enter
-   // to a restricted page
-   loginState: 'login'
+    domain: AUTH0_DOMAIN,
+    clientID: AUTH0_CLIENT_ID,
+    callbackURL: location.href,
+    loginState: 'splash'
   });
-
-
 
   $httpProvider.interceptors.push('authInterceptor');
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/dashboard');
+  $urlRouterProvider.otherwise('/splash');
 
 })
-
 .run(function(auth) {
-  // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
 });

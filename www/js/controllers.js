@@ -1,5 +1,17 @@
 angular.module('starter.controllers', [])
 
+.controller('LocationCtrl', function ($scope, $location) {
+  $scope.go = function (target) {
+    $location.path(target);
+  };
+})
+
+.controller('RegisterCtrl', function ($scope, $location) {
+  $scope.goToSplash= function() {
+    $location.path('/splash');
+  }
+})
+
 .controller('AdditionalNumbersCtrl', function($scope, $stateParams, $location, $ionicScrollDelegate, $log ) {
   $scope.providers  = [   {
     "name":"Abortion - Post-Abortion Project Rachel",
@@ -547,7 +559,14 @@ $scope.nextSlide = function() {
 
 
 .controller('DashCtrl', function($scope, auth, $state) {
-  $scope.auth = auth;
+    $scope.auth = auth;
+  $scope.$watch('auth.profile.name', function(name) {
+    if (!name) {
+      return;
+    }
+    $scope.message.text = 'Welcome ' + auth.profile.name + '!';
+  });
+
   $scope.goToResources = function() {
     $state.go('resources');
   };
@@ -1089,27 +1108,61 @@ $scope.$on('modal.removed', function() {
   // Execute action
 });
 })
+.controller('LoginCtrl', function (auth, $scope, $location) {
 
-.controller('LoginCtrl', function($scope, auth, $state, $ionicSlideBoxDelegate) {
-  auth.signin({
-    // This is a must for mobile projects
-    popup: true,
-    // Make the widget non closeable
-    standalone: true,
-    // This asks for the refresh token
-    // So that the user never has to log in again
-    offline_mode: true,
-    device: 'Phone',
-    container: 'login',
-    icon: 'http://kmartinezmedia.com/logo-32.png',
-    chrome: true,
-    scope: 'openid profile'
-  }, function() {
-    // Login was successful
-    $state.go('dash');
-  }, function(error) {
-    // Oops something went wrong during login:
-    console.log('There was an error logging in', error);
-  });
-  $scope.myActiveSlide = 0;
+  $scope.goToSplash= function() {
+    $location.path('/splash');
+  }
+
+  $scope.message = {text: ''};
+
+  $scope.user = '';
+  $scope.pass = '';
+
+  $scope.goToSplash = function() {
+    $location.path('/splash');
+  }
+
+  function onLoginSuccess() {
+    $scope.message.text = '';
+    $location.path('/dashboard');
+    $scope.loading = false;
+  }
+
+  function onLoginFailed() {
+    $scope.message.text = 'invalid credentials';
+    $scope.loading = false;
+  }
+
+  $scope.reset = function() {
+    auth.reset({
+      email: 'hello@bye.com',
+      password: 'hello',
+      connection: 'Username-Password-Authentication'
+    });
+  }
+
+  $scope.submit = function () {
+    $scope.message.text = 'loading...';
+    $scope.loading = true;
+    auth.signin({
+      connection: 'Username-Password-Authentication',
+      username: $scope.user,
+      password: $scope.pass,
+      scope: 'openid name email'
+    }, onLoginSuccess, onLoginFailed);
+
+  };
+
+  $scope.doGoogleAuthWithPopup = function () {
+    $scope.message.text = 'loading...';
+    $scope.loading = true;
+
+    auth.signin({
+      popup: true,
+      connection: 'google-oauth2',
+      scope: 'openid name email'
+    }, onLoginSuccess, onLoginFailed);
+  };
+
 })
