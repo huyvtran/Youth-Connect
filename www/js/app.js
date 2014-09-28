@@ -67,6 +67,21 @@ templateUrl: "templates/dashboard.html",
 controller: 'DashCtrl'
     })
 
+.state('aboutapp', {
+  url: '/aboutapp',
+templateUrl: "templates/about_app.html"
+})
+
+.state('about', {
+  url: '/about',
+templateUrl: "templates/about.html"
+})
+
+
+.state('settings', {
+  url: '/settings',
+templateUrl: "templates/settings.html"
+})
     .state('questions', {
       url: '/questions',
 templateUrl: "templates/questions.html",
@@ -394,9 +409,9 @@ templateUrl: "templates/inspiration.html"
 templateUrl: "templates/bookmarks.html"
     })
 
-    .state('notes', {
-      url: "/notes",
-templateUrl: "templates/notes.html"
+    .state('cheat', {
+      url: "/cheat",
+templateUrl: "templates/cheat.html"
     })
 
     .state('friends', {

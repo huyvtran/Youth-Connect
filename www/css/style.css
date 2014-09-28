@@ -147,34 +147,59 @@ border-radius: 100px;
   text-align: center;
   display:block;
 }
-.menu1 {
+.sidemenu_bg img{
+  opacity: 0.4;
+}
+.resource {
   background-color: #5c99bf;
-  background-image: url('../img/dashboard1.png');
+  background-image: url('../img/resources.png');
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
+  background-size: 50%;
 }
 
-.menu2{
+.eguru{
 background-color: #25a790;
-background-image: url('../img/dashboard2.png');
+background-image: url('../img/eguru.png');
 background-repeat: no-repeat;
 background-position-x: center;
 background-position-y: center;
+background-size: 50%;
 }
-.menu3{
+.cheat{
 background-color: #0cadb6;
-background-image: url('../img/dashboard3.png');
+background-image: url('../img/cheat.png');
 background-repeat: no-repeat;
 background-position-x: center;
 background-position-y: center;
+background-size: 50%;
 }
-.menu4{
+.add{
 background-color: #728cc0;
-background-image: url('../img/dashboard4.png');
+background-image: url('../img/add.png');
 background-repeat: no-repeat;
 background-position-x: center;
 background-position-y: center;
+background-size: 50%;
+}
+
+.inspiration{
+background-color: #2980b9;
+background-image: url('../img/inspiration.png');
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+background-size: 50%;
+}
+
+.about{
+background-color: #1abc9c;
+background-image: url('../img/about.png');
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+background-size: 50%;
 }
 
 .slide1{

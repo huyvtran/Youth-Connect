@@ -522,8 +522,14 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('NavCtrl', function($scope, auth, $state,$ionicSideMenuDelegate, $ionicSlideBoxDelegate) {
+.controller('NavCtrl', function($scope, auth, $state,$ionicSideMenuDelegate, $ionicSlideBoxDelegate, $location) {
   $scope.auth = auth;
+
+  $scope.go = function (target) {
+    $location.path(target);
+  };
+
+
   $scope.logout = function() {
     auth.signout();
     $state.go('login');
@@ -578,6 +584,15 @@ $scope.nextSlide = function() {
   };
   $scope.goToAddResource = function() {
     $state.go('resources');
+  };
+  $scope.goToInspiration = function() {
+    $state.go('inspiration');
+  };
+  $scope.goToAbout = function() {
+    $state.go('about');
+  };
+  $scope.goToCheat = function() {
+    $state.go('cheat');
   };
 
 })
@@ -658,6 +673,8 @@ $scope.nextSlide = function() {
   $scope.goToLeisure = function() {
     $state.go('leisure-tab.hobbies');
   };
+
+
   $scope.resources = Resources.all();
 
 })
